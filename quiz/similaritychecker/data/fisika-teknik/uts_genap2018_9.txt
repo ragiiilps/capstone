@@ -1,0 +1,3 @@
+Sebuah bola memiliki massa 0,15 kg dan bergerak dengan kecepatan 20 m/s. Bola tersebut dipukul sehingga arahnya berbalik 1800 dan kecepatannya menjadi 40 m/s. Interaksi gaya antara bola dan pemukulnya dapat dilihat pada gambar berikut:
+a. berapakah gaya maksimum yang diberikan oleh pemukul kepada bola?
+b. berapakah gaya rerata yang diterima bola?

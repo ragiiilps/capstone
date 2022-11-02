@@ -1,0 +1,16 @@
+Sebuah mobil dengan massa total beban penuh 1,5 ton, konstanta gesekan udara permukaan
+depan mobil 0,4 kg/m, ditopang oleh 4 roda yang masing-masing memiliki ukuran 185/60 15
+(lebar 18,5 cm, diameter 60 cm), massa masing-masing roda 2,5 kg, koefisien gesek keempat
+roda terhadap jalan 0,02. Roda depan diputar oleh motor listrik dengan daya 45 kW pada
+[300; 3.000] rpm dengan rasio gigi final yang merupakan rasio gigi output (terhubung ke roda)
+terhadap input (terhubung ke motor listrik) melalui kopling kering yang digerakkan secara
+hidrolis otomatis.
+a. Hitung energi kinetik rotasi per roda yang terdiri atas ban dan velg dengan asumsi satu
+benda rigid!
+b. Hitung kecepatan maksimum mobil dalam km/jam ketika berjalan datar!
+c. Jika kecepatan maksimum di jalan datar dibuat pada rpm maksimum motor listrik,
+hitung rasio gigi akhir yang diperlukan !
+d. Hitung kecepatan maksimum dalam km/jam di jalan menanjak dengan sudut 200
+terhadap bidang datar!
+e. Tentukan apakah kecepatan maksimum di soal No. 1d berada dalam daerah daya
+maksimum motor listrik!

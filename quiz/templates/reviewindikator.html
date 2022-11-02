@@ -1,0 +1,201 @@
+<script></script>
+
+{% extends 'based.html' %}
+{% load static %}
+{% load extras %}
+{% block title %}
+
+
+<span style="color:#976dd8;">Generate</span>
+{% endblock title %}
+
+
+<div>
+
+{% block content %}
+
+	<style>
+    /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #custom-input {
+    display: inline-block;
+    max-width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    line-height: 1.25;
+    color: #495057;
+    vertical-align: middle;
+    background-size: 8px 10px;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  </style>
+	<div style="display: flex; flex-direction: row;">
+		<h4 style="opacity: 0.5; text-align: center; padding: 18px 0; margin-top:10px;">Indikator</h4>
+		<h4 style="opacity: 0.5; text-align: center; padding: 18px 0; margin-top:10px;margin-left: 84px">Detail Indikator</h4>
+		<div style="margin-left: 84px">
+			<h4 style="padding: 16px 0;  margin-top:10px; border-top: 2px solid #2f245c;">Review Indikator</h4>
+		</div>
+	</div>
+
+  {%if status == 1%}
+  
+	<div id="modalReview" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<form method="POST">
+				<input type="hidden" name="type" value="tolak">
+          {% csrf_token %}
+          {{form}}      
+					  <br>
+						<br>
+							<button type="submit" id="btnTolakReview" class="btn btn-info btn-fill btn-primary" style="margin-bottom: 10px;width:20%;">Tolak</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      <h3 style="padding: 0 16px 16px 0;">Review Indikator</h3>
+    </div>
+    <div class="col-md-7">
+      <button type="submit" id="btnTolak" class="btn btn-info btn-fill pull-right btn-primary" style="margin:17px 15px 15px 10px; width: 100px; color: #2f245c; background-color: white;">Tolak</button>
+      <form method="POST" action="">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{indikator.id}}">
+        <input type="hidden" name="type" value="terima">
+        <button type="submit" class="btn btn-info btn-fill pull-right btn-primary" style="margin:17px 15px 15px 10px; width: 100px;">Terima</button>
+      </form>
+    </div>
+  </div>
+
+  {%elif status == 2%}
+  <div class="row">
+    <div class="col-md-5">
+      <h3 style="padding: 0 16px 16px 0;">Review Indikator</h3>
+    </div>
+    <div class="col-md-7" >
+      <p class="pull-right" style="margin:17px 15px 15px 10px ">Soal Ditolak</p>
+    </div>
+  </div>
+
+  {%elif status == 3%}
+  <div class="row">
+    <div class="col-md-5">
+      <h3 style="padding: 0 16px 16px 0;">Review Indikator</h3>
+    </div>
+    <div class="col-md-7" >
+      <form method="POST" action="">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="download">
+        <button type="submit" class="btn btn-info btn-fill pull-right btn-primary" style="margin:17px 15px 15px 10px; width: 100px;">Download</button>
+      </form>
+      <p class="pull-right" style="margin:17px 15px 15px 10px ">Soal Diterima</p>
+    </div>
+  </div>
+
+  {%endif%}
+
+  {% for soal, t in request.session.question|zip:request.session.answer  %}
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header" style="background:#2f245c;color:white;padding-bottom:10px;"></div>
+        <div class="card-body ">
+          <b>{{ soal|safe }}</b>
+          <hr>
+          {% for j in t %}
+          {{ j|safe }}
+          <br>
+          {%  endfor %}
+				  <!--<div class="text-center"><a href><img src="{% static 'img/word.png'%}" style="width:23px;"> Download Word</a></div>-->
+        </div>
+      </div>
+    </div>
+  {%  endfor %}
+  <div>
+    <button class="btn btn-info btn-fill pull-right btn-primary"  style="margin:17px 15px 15px 10px; width: 100px;" onclick="window.history.back()">Kembali</button> 
+  </div>
+</div>
+  
+
+  <script>
+    var modal = document.getElementById("modalReview");
+    var btn = document.getElementById("btnTolak");
+    var span = document.getElementsByClassName("close")[0];
+    function goBack() {
+      window.history.back();
+    }
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+{% endblock content %}
+
+</div>
+<div>
+  {% block aig %}
+
+    {{ KmsVarVal }} 
+		<br>
+    {{ keynya }} 
+		<br>
+    {{ hsl }} 
+		<br>
+    {{ KmsVarBaru }} 
+		<br>
+    {{ VarnVal }} 
+		<br>
+    {{ VarBaru }} 
+		<br>
+    {{ jawaban }}
+
+
+  {% endblock aig %}
+
+</div>

@@ -1,0 +1,160 @@
+<style>
+	#custom-input {
+    display: inline-block;
+    max-width: 100%;
+	width:1000px;
+    height: calc(2.25rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    line-height: 1.25;
+    color: #495057;
+    vertical-align: middle;
+    background-size: 8px 10px;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+</style>
+
+{% extends 'based.html' %}
+
+{% load static %}
+{% block title %}
+<span style="color:#976dd8;">Data Soal</span>
+{% endblock title %}
+
+{% block content %}
+
+
+<div style="display: flex; flex-direction: row;">
+	<h4 style="text-align: center;border-top: 2px solid #2f245c; padding: 16px 0; margin-top:10px;">Data Soal</h4>
+</div>
+<div class="row">
+    <div class="col-md-12">
+		{% for soal in datasoal %}
+		{%if soal.status.id == 2%}
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;font-size:12px;font-weight:700;color:white;padding-bottom:10px;padding-left: 30px;">
+				<div class="row">
+					<div class="col-lg-7" style=" display: flex; align-items: center; margin:0 15px;">
+						{{soal.judul}}
+					</div>
+				</div>
+			</div>
+			<div class="card-body" style="margin-top: 10px;">
+				<div class="row">
+					<div class="col-lg-8" style="margin:0 15px;">
+						<h5>{{ soal.soal|safe }}</h5>
+                        <h5>{{Indikator}}</h5>
+						<h5 style="font-size: smaller;"><b>Status</b> : {{ soal.status }}</h5>
+					</div>
+					<div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin-right:14px;margin-bottom: 10px;">
+						<h5>{{ soal.pengacakan }}</h5> 
+					</div>
+					<div class="col-lg-2" style=" display: flex; justify-content: center; align-items: center;margin-bottom: 10px;">
+						<form method="POST" action="">
+							{% csrf_token %}
+							<input type="hidden" name="id" value="{{ soal.id }}">
+							<input type="hidden" name="type" value="lihat">
+							<button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Lihat Soal</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		{%else%}
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;font-size:12px;font-weight:700;color:white;padding-bottom:10px;padding-left: 30px;">
+				<div class="row">
+					<div class="col-lg-7" style=" display: flex; align-items: center; margin:0 15px;">
+						{{soal.judul}}
+					</div>
+				</div>
+			</div>
+			<div class="card-body" style="margin-top: 10px;">
+				<div class="row">
+					<div class="col-lg-8" style="margin:0 15px;">
+						<h5>{{ soal.soal|safe }}</h5>
+						<h5 style="font-size: smaller;"><b>Status</b> : {{ soal.status }}</h5>
+					</div>
+					<div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin: 0 20px;">
+						<h5>{{ soal.pengacakan }}</h5> 
+					</div>
+					<div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin-right:14px;margin-bottom: 10px;">
+						<form method="POST" action="">
+							{% csrf_token %}
+							<input type="hidden" name="id" value="{{ soal.id }}">
+							<input type="hidden" name="type" value="lihat">
+							<button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Lihat Soal</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}		
+		{% endfor %}
+		<br/>
+
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;font-size:12px;font-weight:700;color:white;padding-left: 30px;">
+				<div class="row">
+					<div class="col-lg-7" style=" display: flex; align-items: center;">
+						<h4><b>Komentar</b></h4>
+					</div>
+				</div>
+			</div>
+			<div class="card-body" style="margin-top: 10px; margin-bottom:10px;">
+				<div class="row">
+					{% csrf_token %}
+					{% if not revisian %}
+					<div class="col-lg-12" style="margin:0 15px;">
+							<strong>Belum ada komentar <a href="#"></a></strong>
+					</div>
+					{% else %}
+						{% for pesan_revisi in revisian %}
+						<div class="col-lg-1">
+							<img class="rounded-circle" src="{% static 'img/avatar.png'%}" style="width: 50px;height: 50px;margin-bottom: 20px;margin-right: 15px; margin-top: 15px;" >
+						</div>
+						<div class="col-lg-10" style="margin-right: 15px;">
+							<h5 style="margin-top: 7px;">{{pesan_revisi.id_user}}</h5>
+							<div class="d-lg-flex p-2">
+								<div class="container-fluid text-black" style="background:#f1f1f1; border-radius: 10px;">
+									<h5 style="font-size: smaller; margin-top: 15px;">{{pesan_revisi}}</h5>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		{% for soal in datasoal %}
+		{%if soal.status.id == 1%}
+		<div class="container pt-3">
+			<div class=row>
+				<div class="col-lg-1">
+					<img class="rounded-circle" src="{% static 'img/avatar.png'%}" style="width: 50px;height: 50px;margin-bottom: 20px;margin-right: 15px;" >
+				</div>
+				<div class="col-lg-11" style="margin-bottom: 15px;">
+					<form method="post" id="indikatorForm">
+						{% csrf_token %}
+						<input type="hidden" name="id" value="{{ soal.id }}">
+						<input type="text" name="pesan_revisi" id="custom-input" placeholder="Tambah Komentar">
+					  <br>
+					  <br>
+						<button type="submit" class="btn btn-info btn-fill btn-primary float-right">Komentari</button>
+					  </form>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% endfor %}
+		<div class="col-md-12">
+			<a href="javascript:history.go(-1)" class="btn btn-info btn-fill pull-right btn-primary">Kembali</a>
+		</div>  
+	</div>
+</div>
+
+{% endblock content %}

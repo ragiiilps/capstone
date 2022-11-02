@@ -1,0 +1,1 @@
+Sebuah benda dilemparkan tegak lurus ke atas dengan kecepatan awal 15 m/s. Berapakah ketinggian maksimal yang dapat diraih benda tersebut bila akselerasi gravitasi melawan kecepatan ke atas benda tersebut dengan nilai 9.8 m/s2.

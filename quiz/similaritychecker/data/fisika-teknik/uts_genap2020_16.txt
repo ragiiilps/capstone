@@ -1,0 +1,3 @@
+Potential 3
+Sebuah bola dengan berat 1 kg diletakkan 1 meter di atas sebuah per yang memiliki konstanta 150 N/m.
+Saat bola tersebut dijatuhkan ke atas per, berapa jauhkan perubahan Panjang per?

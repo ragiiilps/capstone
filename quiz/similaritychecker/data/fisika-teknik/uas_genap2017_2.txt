@@ -1,0 +1,1 @@
+Gelombang berjalan mempunyai persmaan y = 0,2 sin (100π t – 2π x), dimana y dan x dalam meter dan t dalam sekon. Tentukan amplitudo, periode, frekuensi, panjang gelombang, dan cepat rambat gelombang tersebut !

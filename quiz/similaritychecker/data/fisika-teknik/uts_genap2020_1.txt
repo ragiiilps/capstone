@@ -1,0 +1,6 @@
+Kinematika 1
+Sebuah mobil berjalan dengan kecepatan konstan. Speedometer analognya menunjukkan kecepatan 72 km/jam. Di pinggir jalan, mobil yang lain tengah berhenti. Saat mobil pertama melewatinya, mobil ini berakselerasi dengan percepatan konstan 5.0 m/s2.
+Perlu berapa meter, sampai mobil kedua berhasil sejajar dengan mobil pertama?
+Perhatikan angka penting.
+Beri ilustrasi dengan diagram.
+Mana yang merupakan model kecepatan konstan, mana yang akselerasi konstan?

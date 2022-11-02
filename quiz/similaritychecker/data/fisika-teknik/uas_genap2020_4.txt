@@ -1,0 +1,19 @@
+Why a Bicycle Pump is getting hot?
+A bicycle pump is a device utilized for pumping bicylce tyres. A bicycle pump is getting hot (increase in temperature) during the pumping process compared to the temperature before the pumping process is started. In this problem, we want to take a look at the process of pumping a bicycle tyre, and to understand why there is an increase in temperature during the pumping process.
+A bicycle pump consists of several parts as shown in the figure above. It consists of a cyclinder with a piston, connected to a handle, to compress or expand the air inside the cylinder. It also consists of a hose which is used to connect the pump cylinder with the tyre. Finally, it has 2 (two) valves (inlet and outlet valve) to control the air flow inside the pump. For simplicity, we will use the model shown in the figure above for our analysis. There are 3 (three) conditions that we would like to analyze during one pumping cycle as shown in the figure below.
+For simplicity, we assume that the heat exchange between the pump, the tyre and the surrounding environment takes place rapidly so that the temperature inside the pump and the tyre are constant during one pumping cycle. We will assume also the tyre’s volume is constant during one pumping cycle. Finally, we will assume that the hose’s volume is very small compared to the volume of pump cylinder and tyre, so that it can be neglected in this problem.
+Initial Condition
+Initially, the pump is full of air with pressure Po, which is equal to the atmospheric pressure outside the pump, whereas inside the tyre, the pressure is Pt (Condition I). The temperature inside both pump and tyre are To.
+a) Determine the value of no and nt, number of mol inside the pump and inside the tyre, respectively! Express your answer only in terms of Po, Vo, Pt, Vt, To and universal gas constant R!
+Process I
+The air inside the pump is then compressed by pushing the piston down, increasing the pressure inside the pump and causing the inlet valve to close. This process is continued until the pressure inside the pump is equal to the pressure inside the tyre (Condition II).
+b) Determine the value of P1 and V1, air pressure and volume inside the pump at the end of Process I (Condition II), respectively! Express your answer only in terms of Po, Vo, and Pt!
+c) Determine the value of Q1, total heat added to/extracted from the pump during Process I! Express your answer only in terms of Po, Vo, and Pt!
+Process II
+Equal air pressure inside the pump and the tyre causes the outlet valve to open, and the air starts to flow from the pump into the tyre. This process is continued until all the air inside the pump has been pumped into the tyre (Condition III).
+d) Determine the value of P2, air pressure inside the tyre at the end of Process II (Condition III)! Express your answer only in terms of Po, Vo, Pt, and Vt!
+e) Determine the value of Q2, total heat added to/extracted from the pump during Process II! Express your answer only in terms of Po, Vo, Pt, and Vt!
+Process III (Bonus Question)
+One pumping cycle is finished by pulling the piston up, closing the outlet valve and opening the inlet valve. As the result, the air from outside the pump is flowing into the pump. This process is continued until the pump reaches its initial condition (Condition I).
+f) Determine the value of Q3, total heat added to/extracted from the pump during Process III!
+g) Finally, determine the value of Q, total heat added to/extracted from the pump during one pumping cycle! Based on this result, can you explain why the pump is getting hot during the pumping process?

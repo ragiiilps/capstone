@@ -1,0 +1,4 @@
+Kinetik 3
+Sebuah tas ditarik dengan gaya 10 N membentuk sudut 45o dari sumbu horisontalnya sejauh 0.5 km. 
+Gambarkan sketsanya.
+Hitung kerja yang dilakukan oleh gaya tersebut.

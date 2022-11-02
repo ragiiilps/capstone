@@ -1,0 +1,5 @@
+Sistem yang digambarkan di samping berada dalam keadaaan kesetimbangan; pegas bagian
+kanan teregang sejauh x1. Koefisien gesekan antara kedua balok μ, dan tidak ada gesekan
+ntara balok bawah dengan lantai. Konstanta pegas asingmasing 3k dan k. Massa kedua balok
+masing-masing m. Tentukan simpangan maksimum (amplitudo) osilasi sistem dimana balok
+atas masih diam relatif terhadap balok bawah. Massa pegas boleh diabaikan.

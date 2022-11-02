@@ -1,0 +1,2 @@
+Struktur data graph memiliki banyak kegunaan. Misalnya dapat digunakan untuk merepresentasikan data penerbangan sebagai berikut. Dalam graph berikut ini, vertex mewakili kota, dan edge mewakili penerbangan antara kota-kota tersebut. Bobot dari edge mewakili biaya penerbangan.
+a. Tuliskan implementasi dari graph tersebut dengan menggunakan adjacency matrix.

@@ -1,0 +1,6 @@
+Sebuah benda dengan massa 10,25 kg bergerak dengan kecepatan 80 km per jam ke arah 300 terhadap
+garis horisontal. Energi kinetik dihitung menggunakan persamaan 𝐾 = 0,5𝑚𝑣.
+a. Hitung energi kinetik dengan satuan J dalam 4 significant figure!
+b. Hitung komponen horisontal dan vertikal kecepatan benda tersebut!
+c. Benda tersebut bergerak sejauh 72,4 m arah 320 ke timur terhadap arah utara, kemudian 57,3 m
+arah 360 ke selatan terhadap barat, dan 17,8 m ke selatan. Tentukan posisi akhir benda tersebut!

@@ -1,0 +1,1 @@
+Sebuah senar gitar yang mempunyai tegangan To menghasilkan Standing Wave dengan frekuensi fo. Jika tegangan senar tersebut berubah sebesar ΔT (<< To), maka frekuensi Standing Wave yang dihasilkan akan berubah sebesar Δf (<< fo). Buktikanlah bahwa : 

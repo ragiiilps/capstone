@@ -1,0 +1,4 @@
+<option value="">Pilih Learning Outcome</option>
+{% for lo in Lo %}
+<option value="{{lo.pk}}">{{lo.LO}} {{lo.deskripsi}}</option>
+{% endfor %}

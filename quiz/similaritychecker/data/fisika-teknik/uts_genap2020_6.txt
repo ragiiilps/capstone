@@ -1,0 +1,6 @@
+Kinematika 2D 2Dfsa
+Sebuah poros berputar dengan kecepatan 2400 rpm.
+Poros tersebut memiliki diameter 4.0 cm.
+Berapa kecepatan linear pada permukaan poros?
+1. Buat modelnya
+2. perhatikan satuannya.

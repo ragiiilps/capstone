@@ -1,0 +1,30 @@
+{% extends 'based.html' %}
+{% load static %}
+
+{% block title %}
+<span style="color:#976dd8;">Panduan</span>
+{% endblock title %}
+
+{% block content %}
+
+
+<div style="display: flex; flex-direction: row;">
+	<h4 style="text-align: center;border-top: 2px solid #2f245c; padding: 16px 0; margin-top:10px;">Panduan</h4>
+</div>
+<div class="row">
+    <div class="col-md-12">
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;text-align:left;color:white;padding-bottom:10px;">
+			</div>
+			<div class="card-body ">
+				https://docs.google.com/viewerng/viewer?url=localhost:8000/static/file/panduan.pdf&embedded=true
+
+				<iframe src="https://docs.google.com/viewerng/viewer?url={{request.get_host}}{% static 'file/panduan.pdf'%}&embedded=true" frameborder="0" height="800px" width="100%"></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+{% endblock content %}

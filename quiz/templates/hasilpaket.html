@@ -1,0 +1,101 @@
+{% extends 'based.html' %} {% load static %} {% load extras %} {% block title %}
+<span style="color: #976dd8">Generate</span>
+{% endblock title %}
+
+<div>
+  {% block content %}
+  <div style="display: flex; flex-direction: row">
+    <div style="margin-left: 0px">
+      <h4
+        style="padding: 16px 0; margin-top: 10px; border-top: 2px solid #2f245c"
+      >
+        Detail Paket Soal
+      </h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8" style="margin-bottom: 10px">
+      <div style="display: flex; flex-direction: row">
+        <h3 style="padding: 0 16px 16px 0">{{judul}}</h3>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end" style="margin: 10px 0px 10px 30px">
+      <form method="POST" action="">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="kisi" />
+        <button
+          type="submit"
+          class="btn btn-info btn-fill pull-right btn-primary"
+        >
+          Download Kisi-Kisi
+        </button>
+      </form>
+      <form method="POST" action="">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="send_all" />
+        <button type="submit" class="btn btn-info btn-fill pull-right ml-3">
+          Kirim Semua Soal
+        </button>
+      </form>
+    </div>
+  </div>
+
+  {%for paket_soal in paket_soal_data%}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div
+          class="card-header"
+          style="
+            background: #2f245c;
+            color: white;
+            padding-bottom: 10px;
+            padding-left: 30px;
+          "
+        >
+          {{paket_soal.judul}}
+        </div>
+        <div class="card-body">
+          <div class="col-md-12">
+            {%for soal in paket_soal.soal%}
+            <b>{{ soal.question|safe }}</b>
+            <hr />
+            {% for j in soal.option %} {{ j|safe }}<br />
+            {% endfor %}
+            <hr />
+            <hr />
+            {%endfor%}
+          </div>
+          <a
+            href="javascript:history.go(-1)"
+            class="btn btn-info btn-fill pull-left btn-primary"
+            >Kembali</a
+          >
+          <div class="d-flex justify-content-end">
+            <form method="POST" action="">
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{paket_soal.id}}" />
+              <input type="hidden" name="type" value="download" />
+              <button type="submit" class="btn btn-info btn-fill btn-primary">
+                Download Soal
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {%endfor%} {% endblock content %}
+    </div>
+
+    <div>
+      {% block aig %} {{ KmsVarVal }} <br />
+      {{ keynya }} <br />
+      {{ hsl }} <br />
+      {{ KmsVarBaru }} <br />
+      {{ VarnVal }} <br />
+      {{ VarBaru }} <br />
+      {{ jawaban }} {% endblock aig %}
+    </div>
+  </div>
+</div>

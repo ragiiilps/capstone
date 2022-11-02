@@ -1,0 +1,5 @@
+Di dalam sebuah kontainer tertutup, terdapat gas sebanyak $n$ mol. Berapakah usaha yang dilakukan oleh gaya luar pada gas untuk proses-proses berikut ini?
+a. Gas berada dalam proses isochoric.
+b. Volume gas diubah dari Vi menjadi Vf dalam proses isobaric dengan tekanan konstan po.
+c. Volume gas diubah dari Vi menjadi Vf dalam proses isothermal dengan suhu konstan To.
+d. Suhu gas diubah sebesar ΔT dalam proses adiabatic (pVγ = constant).

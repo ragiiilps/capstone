@@ -1,0 +1,129 @@
+{% extends 'based.html' %}
+
+
+{% block title %}
+
+<span style="color:#976dd8;">Dashboard</span>
+{% endblock title %}
+
+{% block content %}
+{% load static %}
+
+
+<div class="row" style="padding-bottom: 35px; border-bottom: 0.5px solid rgba(0, 0, 0, .5)">
+	<div class="col-lg-2">
+		<img class="rounded-circle" src="{% static 'img/avatar.png'%}" style="width: 138px;height: 138px;">
+	</div>
+	<!-- <div class="col-lg-2 d-flex align-items-center" style="margin-left: 45px;">
+			<a href="./">
+				<div class="button-edit" style="width: 120px;">
+					<img src="{% static 'img/edit-purple.png'%}" style="width:15px;height:15px;margin:10px;">
+						<div class="edit-text">
+							Edit
+						</div>
+				</div>
+			</a>
+		</div> -->
+	<div class="col-lg-3 d-flex align-items-center" style="margin-left: 10px;">
+		<a href="{%url 'changepassword'%}">
+			<div class="button-edit" style="width:250px;">
+				<img src="{% static 'img/key.png'%}" style="width:15px;height:15px;margin:10px;">
+				<div class="edit-text">
+					Ubah Password
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="col-lg-3 d-flex align-items-center" style="margin-left: 10px;">
+		<a href="{% url 'subscription' %}">
+			<div class="button-edit" style="width:160px;">
+				<img src="{% static 'img/key.png'%}" style="width:15px;height:15px;margin:10px;">
+				<div class="edit-text">
+					Subskripsi
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="col-lg-3 d-flex align-items-center" style="margin-left: 10px;">
+		<a href="{% url 'logout' %}">
+			<div class="button-edit" style="width:160px;">
+				<img src="{% static 'img/logout.png'%}" style="width:15px;height:15px;margin:10px;">
+				<div class="edit-text">
+					Keluar
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+<div class="row" style="padding-top:35px;">
+	<div class="col-lg-5" style="margin-right: 70px;">
+		<div class="desc">
+			<div class="title-desc">
+				Nama Lengkap
+			</div>
+			<div class="detail-desc">
+				{{full_name}}
+			</div>
+		</div>
+		<div class="desc">
+			<div class="title-desc">
+				Email
+			</div>
+			<div class="detail-desc">
+				{{email}}
+			</div>
+		</div>
+		<div class="desc">
+			<div class="title-desc">
+				Nomor Handphone
+			</div>
+			<div class="detail-desc">
+				{{nomer_hp}}
+			</div>
+		</div>
+		<!-- <div class="desc">
+			<div class="title-desc">
+				Alamat
+			</div>
+			<div class="detail-desc">
+				{{alamat}}
+			</div>
+		</div> -->
+	</div>
+	<div class="col-lg-5">
+		<div class="desc">
+			<div class="title-desc">
+				Nomer Induk Pegawai (NIP)
+			</div>
+			<div class="detail-desc">
+				{{nip}}
+			</div>
+		</div>
+		<!-- <div class="desc">
+			<div class="title-desc">
+				Golongan/Pangkat
+			</div>
+			<div class="detail-desc">
+				{{golongan}}/{{pangkat}}
+			</div>
+		</div> -->
+		<div class="desc">
+			<div class="title-desc">
+				Instansi
+			</div>
+			<div class="detail-desc">
+				{{instansi}}
+			</div>
+		</div>
+		<div class="desc">
+			<div class="title-desc">
+				Matkul yang Diajar
+			</div>
+			<div class="detail-desc">
+				{{mapel}}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

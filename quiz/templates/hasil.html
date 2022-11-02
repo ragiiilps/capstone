@@ -1,0 +1,102 @@
+{% extends 'based.html' %} {% load static %} {% load extras %} {% block title %}
+
+<span style="color: #976dd8">Generate</span>
+{% endblock title %}
+<div>
+  {% block content %}
+  <div style="display: flex; flex-direction: row">
+    <h4
+      style="
+        opacity: 0.5;
+        text-align: center;
+        padding: 18px 0;
+        margin-top: 10px;
+      "
+    >
+      Data Soal
+    </h4>
+    <div style="margin-left: 84px">
+      <h4
+        style="padding: 16px 0; margin-top: 10px; border-top: 2px solid #2f245c"
+      >
+        Lihat Soal
+      </h4>
+    </div>
+  </div>
+
+  <div class="alert alert-primary">
+    <span> <b> {{ request.session.title }} </b></span>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body" style="margin-top: -5px">
+          <span style="margin-right: 20px"><b>Hasil</b></span>
+          <img src="{% static 'img/pdf.png'%}" style="width: 30px" />
+          <button
+            onClick="location.href='{% url 'pdf' %}'"
+            style="
+              cursor: pointer;
+              width: 160px;
+              height: 23px;
+              border-color: transparent;
+              background-color: transparent;
+            "
+          >
+            Download Semua
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    {% for soal, t in request.session.question|zip:request.session.answer %}
+    <div class="col-md-12">
+      <div class="card">
+        <div
+          class="card-header"
+          style="background: #2f245c; color: white; padding-bottom: 10px"
+        ></div>
+        <div class="card-body">
+          <b>{{ soal|safe }}</b>
+        </div>
+        <div class="container-fluid mb-3">
+          <hr />
+          {% for j in t %} {{ j|safe }}<br />
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="col-md-12">
+      <form method="POST" action="">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{soal.id}}" />
+        <input type="hidden" name="type" value="submit" />
+        <button
+          type="submit"
+          class="btn btn-info btn-fill btn-primary pull-right"
+          style="width: 100px"
+        >
+          Submit
+        </button>
+      </form>
+      <a
+        href="javascript:history.go(-1)"
+        class="btn btn-info btn-fill btn-primary"
+        >Kembali</a
+      >
+    </div>
+  </div>
+  {% endblock content %}
+</div>
+
+<div>
+  {% block aig %} {{ KmsVarVal }} <br />
+  {{ keynya }} <br />
+  {{ hsl }} <br />
+  {{ KmsVarBaru }} <br />
+  {{ VarnVal }} <br />
+  {{ VarBaru }} <br />
+  {{ jawaban }} {% endblock aig %}
+</div>

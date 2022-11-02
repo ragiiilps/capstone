@@ -1,0 +1,4 @@
+Diketahui bahwa pada sebuah sistem pegas-massa, massa m mempunyai kecepatan yo dan berada pada posisi xo ketika t = 0. Diketahui bahwa posisi x sebagai fungsi waktu t untuk sistem ini dapat dinyatakan sebagai berikut : 
+x(t)=A sin(ω_o t+ϕ_o )
+a. Berapakah nilai dari A dan ϕo tersebut? (Nyatakan jawaban anda dalam variabel xo, vo dan ωo.)
+b. Jika diketahui bahwa vo > 0 dan xo < 0, gambarkanlah grafik v(t) sebagai fungsi dari x(t) untuk time interval 0 < t < T ! Pada grafik tersebut, berilah keterangan posisi saat t = 0, \T/4, 2T/4, 3T/4 dan T!

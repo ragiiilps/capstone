@@ -1,0 +1,5 @@
+Kinematika 2
+Seekor antelop memiliki Panjang kaki 0.7 m. Dia jongkok, dan melompat dengan percepatan 35 m/s2  sejauh panjang kakinya (0.7 meter). Tentukan tinggi yang dicapai antelop, bila didefinisikan:
+Titik nol adalah saat kaki antelop lurus.
+Dalam mengerjakan:
+Beri ilustrasi secukupnya dengan particle diagram.

@@ -1,0 +1,70 @@
+1. Kinematika 1
+Sebuah mobil berjalan dengan kecepatan konstan. Speedometer analognya menunjukkan kecepatan 72 km/jam. Di pinggir jalan, mobil yang lain tengah berhenti. Saat mobil pertama melewatinya, mobil ini berakselerasi dengan percepatan konstan 5.0 m/s2.
+Perlu berapa meter, sampai mobil kedua berhasil sejajar dengan mobil pertama?
+Perhatikan angka penting.
+Beri ilustrasi dengan diagram.
+Mana yang merupakan model kecepatan konstan, mana yang akselerasi konstan?
+2. Kinematika 2
+Seekor antelop memiliki Panjang kaki 0.7 m. Dia jongkok, dan melompat dengan percepatan 35 m/s2  sejauh panjang kakinya (0.7 meter). Tentukan tinggi yang dicapai antelop, bila didefinisikan:
+Titik nol adalah saat kaki antelop lurus.
+Dalam mengerjakan:
+Beri ilustrasi secukupnya dengan particle diagram.
+3. Kinematika 3
+Sebuah bola menggelinding dengan kecepatan 36 km/jam. Lalu, mendapat percepatan sebagai berikut:
+Berapa kecepatannya pada detik ke-8?
+4. Vector 1
+Tentukan resultan vektornya 
+5. Kinematika 2D 1
+Sebuah mobil melaju dengan kecepatan konstan 72 km/jam. Tiba-tiba di depannya terdapat jurang sedalam 10 meter. Berapa jauh mobil akan mendarat? [Buat model secukupnya.]
+6. Kinematika 2D 2Dfsa
+Sebuah poros berputar dengan kecepatan 2400 rpm.
+Poros tersebut memiliki diameter 4.0 cm.
+Berapa kecepatan linear pada permukaan poros?
+1. Buat modelnya
+2. perhatikan satuannya.
+7. Kinematika 2D 3
+Sebuah bianglala (Ferris wheel) memiliki jari-jari 9.0 meter berputar 4.0 kali per menit.
+Hitung kecepatan yang dirasakan orang yang menaikinya.
+Hitung percepatan yang dirasakan orang yang menaikinya.
+Buat model secukupnya.
+Perhatikan satuannya.
+8. Dinamika 1
+Sebuah mobil ditarik dengan kecepatan konstan pada bidang miring dengan sudut 20o. Mobil tersebut memiliki berat 15000 N. Berapa gaya yang diterima oleh tali?
+ [clue: Ingat equilibrium]
+9. Dinamika 2
+Sebuah kargo seberat 100 kg berbentuk kubus dengan ukuran sisi 50 cm.
+Koefisien gesek statiknya 0.4 dan dinamiknya 0.2.
+Hitung percepatan maksimal mobil yang membuat kotak tersebut tidak bergerak. 
+Buat model secukupnya. Jangan hanya hitungan.
+10. Kinetik 1
+Pemain ski memiliki bobot 70 kg melaju pada bidang miring yang sangat licin (gesekan diabaikan) dengan kemiringan 10o. 
+Kecepatan awalnya 7,2 km/jam.
+Berapa kecepatan akhirnya bila dihitung dengan metode : Energi kinetic.
+11. Kinetik 2
+Dua buah vector    dan  
+Nyatakan dalam bentuk polar
+Gambarkan pada sumbu kartesian
+Hitung dot product  
+12. Kinetik 3
+Sebuah tas ditarik dengan gaya 10 N membentuk sudut 45o dari sumbu horisontalnya sejauh 0.5 km. 
+Gambarkan sketsanya.
+Hitung kerja yang dilakukan oleh gaya tersebut.
+13. Kinetik 4
+Sebuah roket memiliki massa 150 ton. Meluncur lurus ke atas dengan dorongan sebesar 4.0 x 106 N.
+Buat model partikelnya.
+Dengan mengabaikan gesekan udara, hitung:
+Usaha yang telah dilakukan oleh gaya dorong.
+Usaya yang telah dilakukan oleh gaya gravitasi.
+Kecepatan roket setelah meluncur sejauh pada 1 km
+14. Potential 1
+Seorang anak bermain perosotan. Tinggi perosotan ini 5 m. Bila rugi gesekan diabaikan, berapa kecepatan akhir anak?
+Gambarkan grafik energi dari hal di atas.
+15. Potential 2
+Sebuah kelereng, dengan massa 25 g, ditembakkan tegak lurus ke atas dari sebuah meriam.
+Panjang meriam adalah 1 meter.
+Saat kelereng keluar dari meriam, kecepatan kelereng adalah 17 m/s.
+Hingga ketinggian berapa, dari permukaan tanah, kelereng akan meluncur?
+16. Potential 3
+Sebuah bola dengan berat 1 kg diletakkan 1 meter di atas sebuah per yang memiliki konstanta 150 N/m.
+Saat bola tersebut dijatuhkan ke atas per, berapa jauhkan perubahan Panjang per?
+

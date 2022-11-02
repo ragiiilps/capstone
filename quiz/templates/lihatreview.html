@@ -1,0 +1,93 @@
+{% extends 'based.html' %}
+
+
+{% block title %}
+<span style="color:#976dd8;">Data Soal</span>
+{% endblock title %}
+
+{% block content %}
+
+
+<div style="display: flex; flex-direction: row;">
+	<h4 style="opacity: 0.5;text-align: center; padding: 18px 0; margin-top:10px;">Detail Paket Soal</h4>
+	<div style="margin-left: 84px">
+		<h4 style=" padding: 16px 0; border-top: 2px solid #2f245c; margin-top:10px;">Soal Dipilih</h4>
+    </div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-12" style="margin-bottom: 10px;">
+        <div style="display: flex; flex-direction: row;justify-content: space-between;">
+        <h3 style="padding: 0 16px 16px 10;">Lihat Review</h3>
+        </div>
+	</div>
+	
+	
+    <div class="col-md-12">
+		{%for hasil in hasil_reviews%}
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;color:white;padding-bottom:10px;padding-left:30px;">
+				Reviewer : {{hasil.peninjau.peninjau_user.first_name}} {{hasil.peninjau.peninjau_user.last_name}}<br>
+			</div>
+			<div class="card-body" style="margin-top: 10px;">
+				<div class="row">
+                    <div class="col-lg-9" style="margin:0 15px;">
+							{%if hasil.status.id == 3 %}
+							{%if hasil.kejelasan_bahasa == 1 %}
+							<h5>Kejelasan Bahasa : Belum Jelas</h5>
+							{%elif hasil.kejelasan_bahasa == 2 %}
+							<h5>Kejelasan Bahasa : Cukup Jelas</h5>
+							{%else%}
+							<h5>Kejelasan Bahasa : Sudah Jelas</h5>
+							{%endif%}
+							{%if hasil.kejelasan_gambar == 1 %}
+							<h5>Kejelasan Gambar : Belum Jelas</h5>
+							{%elif hasil.kejelasan_gambar == 2 %}
+							<h5>Kejelasan Gambar : Cukup Jelas</h5>
+							{%else%}
+							<h5>Kejelasan Gambar : Sudah Jelas</h5>
+							{%endif%}
+							{%if hasil.kesesuaian_waktu == 1 %}
+							<h5>Kesesuaian Waktu : Belum Sesuai</h5>
+							{%elif hasil.kesesuaian_waktu == 2 %}
+							<h5>Kesesuaian Waktu : Cukup Sesuai</h5>
+							{%else%}
+							<h5>Kesesuaian Waktu : Sudah Sesuai</h5>
+							{%endif%}
+							{%if hasil.kesesuaian_cpmk == 1 %}
+							<h5>Kesesuaian CPMK : Belum Sesuai</h5>
+							{%elif hasil.kesesuaian_cpmk == 2 %}
+							<h5>Kesesuaian CPMK : Cukup Sesuai</h5>
+							{%else%}
+							<h5>Kesesuaian CPMK : Sudah Sesuai</h5>
+							{%endif%}
+							<hr>
+							<h5>Komentar : {{hasil.komentar}}</h5>
+							<hr>
+							<h6>Terakhir diubah : {{hasil.created_date}}</h6>
+							{%endif%}
+							<h6>Status review : {{hasil.status}}</h6>
+					</div>
+					<div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin-right:14px;margin-bottom: 10px;">
+					
+					</div>
+					<!-- <div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin-right:14px;margin-bottom: 10px;">
+						<form method="POST" action="">
+							{% csrf_token %}
+							<input type="hidden" name="id" value="{{ hasil.id }}">
+							<input type="hidden" name="type" value="detail">
+							<button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Detail</button>
+						</form>
+					</div> -->
+				</div>                        
+			</div>
+		</div>
+		{%endfor%}
+	</div>
+	<div class="col-md-12">
+		<a href="javascript:history.go(-1)" class="btn btn-info btn-fill pull-right btn-primary">Kembali</a>
+	</div>
+</div>
+	
+{% endblock content %}

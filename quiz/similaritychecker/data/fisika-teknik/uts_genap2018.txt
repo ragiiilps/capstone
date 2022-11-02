@@ -1,0 +1,20 @@
+1. Terdapat tiga besaran mekanis dasar, sebutkan tiga besaran tersebut dan apa satuannya.
+2. X=0,424/(2 x 0,0675000) berapakah X?
+3. Relasi perpindahan sebuah partikel terhadap waktu dapat digambarkan dengan persamaan: s=2t2+ 3. 
+a. buat sketsa kurvanya.
+b. tentukan persamaan kecepatan dan buat sketsa kurvanya.
+c. tentukan persamaan percepatan dan buat sketsa kurvanya.
+d. berapakah kecepatan partikel pada detik ke 100 dan 1000?
+4. Sebuah benda dilemparkan tegak lurus ke atas dengan kecepatan awal 15 m/s. Berapakah ketinggian maksimal yang dapat diraih benda tersebut bila akselerasi gravitasi melawan kecepatan ke atas benda tersebut dengan nilai 9.8 m/s2.
+5. Sebuah kotak seberat 40 kg berada di atas lantai. Kotak tersebut didorong oleh pekerja dengan gaya 20 N. Gesekan tidak ada. Gambarkan vektor gaya yang terjadi pada benda. Tentukan percepatan yang terjadi pada benda.
+6. Seorang siswa menarik seutas tali yang terikat erat pada dinding dengan gaya 100 N. Di tempat yang lain, dua orang siswa saring tarik, dengan arah yang berlawanan, seutas tali. Masing-masing siswa menarik dengan gaya 100 N. 
+a. gambarkan free-body diagram pada kedua kasus tersebut.
+b. tentukan gaya yang diterima tali pada kedua kasus tersebut dan bandingkan, mana yang lebih besar?
+7. Sebuah meriam ditembakkan tegak lurus ke atas. Kecepatan awalnya 35 m/s. Berapakah kecepatannya saat mencapai ketinggian 45 m dari titik awalnya? Hitung dengan g= 10 m/s2.
+8. Sebuah tas ditarik dengan gaya 20 N dengan tali yang miring ke atas membentuk sudut 450 dari garis mendatar sejauh 200 m.
+a. gambarkan sketsa gaya-nya.
+b. hitung usaha yang dilakukan oleh gaya tarik terhadap tas?
+9. Sebuah bola memiliki massa 0,15 kg dan bergerak dengan kecepatan 20 m/s. Bola tersebut dipukul sehingga arahnya berbalik 1800 dan kecepatannya menjadi 40 m/s. Interaksi gaya antara bola dan pemukulnya dapat dilihat pada gambar berikut:
+a. berapakah gaya maksimum yang diberikan oleh pemukul kepada bola?
+b. berapakah gaya rerata yang diterima bola?
+10. Seorang anak berlari dengan kecepatan 4 m/s dan melompat ke atas sebuah troli yang diam. Berat anak adalah 75 kg. Sedangkan berat trolley adalah 25 kg. Berapakah kecepatan trolley dan anak tersebut?

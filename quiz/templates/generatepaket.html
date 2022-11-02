@@ -1,0 +1,212 @@
+{% extends 'based.html' %} {% load static %} {% block title %} <span style="color:#976dd8;">Indikator</span> {% endblock title %} {% block content %}
+<style>
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 8% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	overflow-y: scroll;
+	width: 60%;
+	height: 60%;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.custom-select {
+	position: relative;
+	font-family: Arial;
+}
+
+.custom-select select {
+	display: none;
+}
+
+.select-selected {
+	background-color: #0000;
+}
+
+.select-selected:after {
+	position: absolute;
+	content: "";
+	top: 14px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid #0000 transparent;
+	border-color: #000 transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	top: 7px;
+}
+
+.select-items div,
+.select-selected {
+	color: #000;
+	padding: 3px 2px;
+	background-color: #fff;
+	cursor: pointer;
+	user-select: none;
+}
+
+.select-items {
+	position: absolute;
+	background-color: #000000 solid;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	margin: 0px 11px;
+}
+
+.select-hide {
+	display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+	background-color: rgb(165, 165, 165);
+}
+</style>
+</head>
+<div style="display: flex; flex-direction: row;">
+	<h4 style="text-align: center;border-top: 2px solid #2f245c; padding: 16px 0; margin-top:10px;">Detail Paket Soal</h4> </div>
+<div class="row">
+	<div class="col-md-6" style="margin-bottom: 10px;">
+		<div style="display: flex; flex-direction: row;justify-content: space-between;">
+            <h3 style="padding: 0 16px 16px 10;">Identitas Paket Soal</h3>
+        </div>
+    </div>
+    <div class="col-md-6">
+		<form method="POST" style="margin:17px 0px 10px 52px;" >
+			{% csrf_token %}
+			<input type="hidden" name="id" value="{{ paket_soal.id }}">
+			<input type="hidden" name="type" value="hapus">
+			<button type="submit" id="btnDetailSoal" class="btn btn-info btn-fill pull-left btn-danger">Hapus</button>
+		</form>
+		{% if paket_soal.status.id != 3 %}
+		<form method="POST" style="margin:17px 10px 10px 10px;" >
+			{% csrf_token %}
+			<input type="hidden" name="id" value="{{ paket_soal.id }}">
+			<input type="hidden" name="type" value="generate">
+			<button type="submit" id="btnDetailSoal" onclick="return confirm('Paket belum di-review, apakah yakin di-generate?')" class="btn btn-info btn-fill pull-right btn-primary">Generate</button>
+		</form>
+		{% else %}
+		<form method="POST" style="margin:17px 10px 10px 10px;" >
+			{% csrf_token %}
+			<input type="hidden" name="id" value="{{ paket_soal.id }}">
+			<input type="hidden" name="type" value="generate">
+			<button type="submit" id="btnDetailSoal" class="btn btn-success btn-fill pull-right btn-primary">Generate</button>
+		</form>
+		{% endif %}
+		<a href="{%url 'datapaket'%}"><button type="submit" id="btnGenerate" class="btn btn-info btn-fill pull-right btn-primary" style="margin:0px 10px 10px 10px;">Simpan</button></a>
+		{% if paket_soal.status_id == 1 %}
+		<form method="POST" style="margin:17px 10px 10px 10px;" >
+			{% csrf_token %}
+			<input type="hidden" name="id" value="{{ paket_soal.id }}">
+			<input type="hidden" name="type" value="review">
+			<button type="submit" id="btnDetailSoal" class="btn btn-info btn-fill pull-right btn-primary" style="margin-right:10px;">Siap Review</button>
+		</form>
+		{% endif %}
+		<a href="javascript:history.go(-1)" class="btn btn-info btn-fill pull-right btn-primary">Kembali</a>
+		
+    </div>
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-body">
+				<h5><b>Judul:</b> {{paket_soal.judul}}</h5>
+				<h5><b>Kurikulum:</b> {{paket_soal.kurikulum}}</h5>
+				<h5><b>Semester:</b> {{paket_soal.tahun_ajaran}} {{paket_soal.semester}}</h5>
+				<h5><b>Jumlah Paket:</b> {{paket_soal.jumlah_paket}} paket</h5> 
+				<h5><b>Jumlah Soal:</b> {{jumlah_soal}} soal</h5> 
+				<h5><b>Status:</b> {{paket_soal.status}}</h5>
+				
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12" style="margin-bottom: 10px;">
+		<a href="{% url 'tambahsoal' %}">
+		<button type="submit" id="btnTambahSoal" class="btn btn-info btn-fill pull-right btn-primary" style="margin:17px 10px 10px 10px;">Tambah Soal</button>
+		</a>
+
+		<h3 style="padding: 0 16px 16px 10;">Daftar Soal</h3>
+	</div>
+
+	<div class="col-md-12">
+		{%for soal in data_soal%}
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;font-size:12px;font-weight:700;color:white;padding-bottom:5px; padding-top:15px;padding-left: 15px;"> 
+			</div>
+			<div class="card-body" style="margin-top: 10px;">
+				<div class="row">
+					<div class="col-lg-8" style="align-items: center; padding:0 15px;">
+						<h5>{{soal.indikator}}</h5>
+					<hr>
+						<h5>{{soal.parentsoal | safe}}</h5>
+					<hr>
+						<h5>Status review : {{soal.review}}</h5><br>
+					</div>
+					
+					<div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin: 0 10px;">
+						<form method="POST">
+						{% csrf_token %}
+						<input type="hidden" name="id" value="{{ soal.id }}">
+						<input type="hidden" name="type" value="detail">
+						<button type="submit" id="btnDetailSoal" class="btn btn-info btn-fill pull-right btn-primary">Detail</button>
+						</form>
+					</div>
+
+					<div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin: 0 10px;">
+						<form method="POST">
+						{% csrf_token %}
+						<input type="hidden" name="id" value="{{ soal.id }}">
+						<input type="hidden" name="type" value="lihat_review">
+						<button type="submit" id="btnDetailSoal" class="btn btn-info btn-fill pull-right btn-primary">Lihat Review</button>
+						</form>
+					</div>
+
+					<div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin: 0 10px;">
+						<form method="POST">
+						{% csrf_token %}
+						<input type="hidden" name="id" value="{{ soal.id }}">
+						<input type="hidden" name="type" value="hapus_parent">
+						<button type="submit" id="btnDetailSoal" onclick="return confirm('Apakah akan dihapus ?')" class="btn btn-info btn-fill pull-right btn-primary">Hapus</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		{%endfor%}
+	</div>
+</div>
+
+{%endblock content%}

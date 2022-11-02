@@ -1,0 +1,18 @@
+1. Sebuah mobil dengan motor bakar diesel memerlukan energi rerata 1.000 J per siklus untuk
+bergerak dengan kecepatan rerata 50 km/jam. Mesin tersebut menggunakan rasio kompresi
+10:1 dengan bahan bakar yang memiliki kalor pembakaran 50.000 J/g. Suhu dan tekanan udara
+inisial adalah 270C dan 101 kPa. Diasmusikan udaranya merupakan gas ideal dengan gamma
+1,4.
+a. Hitung efisiensi termal mesin!
+b. Hitung tekanan dan temperatur dalam silinder setelah kompresi (tunjukkan grafik
+siklusnya)!
+2. Sebuah tanki dengan tinggi 10 m bagian atas dibiarkan terbuka. Pada ketinggian 1,5 m ada
+lubang melingkar dengan diameter 2,4 cm. Lubang tersebut diberi sumbat yang akan terlepas
+jika terkena gaya dorong sebesar 100 N. Ketika tanki tersebut diisi dengan air, hitung mulai
+berapa meter ketinggiannya hingga sumbat tersebut terlepas !
+3. Jelaskan (dan tunjukkan dengan gambar) cara kerja venturi meter untuk mengukur kecepatan
+aliran di dalam pipa!
+4. Tuliskan tiga hukum refleksi dan refraksi!
+5. Tuliskan tiga sign rules dalam sistem optik!
+6. Jelaskan pengertian particle in a box, lengkapi dengan gambar!
+7. Jelaskan pengertian fungsi gelombang yang ternormalisasi, tunjukkan dengan rumus!

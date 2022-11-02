@@ -1,0 +1,1 @@
+Sebuah balok metal dengan massa MA dan suhu TA ditempelkan ke balok metal lainnya yang bermassa MB dan suhu TB. Jika diketahui bahwa specific heat dari kedua metal tersebut adalah cA dan cB, maka berapakah suhu akhir dari kedua balok metal tersebut? 

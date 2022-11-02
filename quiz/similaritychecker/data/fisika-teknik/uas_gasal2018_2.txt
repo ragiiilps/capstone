@@ -1,0 +1,4 @@
+Sebuah tanki dengan tinggi 10 m bagian atas dibiarkan terbuka. Pada ketinggian 1,5 m ada
+lubang melingkar dengan diameter 2,4 cm. Lubang tersebut diberi sumbat yang akan terlepas
+jika terkena gaya dorong sebesar 100 N. Ketika tanki tersebut diisi dengan air, hitung mulai
+berapa meter ketinggiannya hingga sumbat tersebut terlepas !

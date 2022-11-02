@@ -1,0 +1,20 @@
+1. Sebuah benda dengan massa 10,25 kg bergerak dengan kecepatan 80 km per jam ke arah 300 terhadap
+garis horisontal. Energi kinetik dihitung menggunakan persamaan 𝐾 = 0,5𝑚𝑣.
+a. Hitung energi kinetik dengan satuan J dalam 4 significant figure!
+b. Hitung komponen horisontal dan vertikal kecepatan benda tersebut!
+c. Benda tersebut bergerak sejauh 72,4 m arah 320 ke timur terhadap arah utara, kemudian 57,3 m
+arah 360 ke selatan terhadap barat, dan 17,8 m ke selatan. Tentukan posisi akhir benda tersebut!
+2. Sebuah rover bergerak di bidang xy dengan variasi terhadap waktu sebagai berikut.
+x = 2 m - (0,25 m/s2)t2
+y = (1 m/s)t + (0,025m/s3)t3
+Hitung koordinat rover dan jaraknya terhadap titik awal setelah 2 s!
+3. Seseorang mengendarai mobil dengan kecepatan konstan 80 km/jam di jalan dengan batas kecepatan
+maksimal 60 km/jam. Ketika polisi mengetahui, dia bergegas mengejar dengan motor pada akselerasi
+konstan 5 m/s2. Hitung waktu yang diperlukan oleh polisi untuk mencapai mobil yang dikejar!
+4. Sebuah mesin menarik benda dengan massa 1.500 kg sejauh 100 m menanjak 10%, hingga benda
+bergerak dengan kecepatan awal 40 km/jam dan kecepatan sampai dengan posisi puncak adalah 60
+km/jam. Rasio gesekan terhadap gaya berat adalah 0,2, dan koefisien gesekan fungsi kecepatan
+diabaikan. Digunakan percepatan gravitasi 9,81 m/s2.
+a. Hitung kerja total yang dilakukan oleh mesin tersebut!
+b. Hitung waktu yang ditempuh oleh benda tersebut dari lembah hingga puncak!
+c. Hitung daya yang dikeluarkan oleh mesin tersebut!

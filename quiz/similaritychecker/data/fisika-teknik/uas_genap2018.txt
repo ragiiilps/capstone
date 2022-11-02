@@ -1,0 +1,17 @@
+1. Sebuah dawai gitar dibentangkan sepanjang sumbu-x pada saat posisi equilrium. Ujung tetap (fix) dawai pada x = 0. Sebuah gelombang sinus dengan amplitude A = 0.750 mm dan frekuensi f = 440 Hz bergerak pada dawai dengan arah -x dengan kecepatan 143 m/s. Gelombang ini dipantulkan dari ujung tetap dan kedua gelombang datang dan pantul membentuk sebuah gelombang tegak.
+a. Tentukan persamaan yang memberikan displacement sebuah titik sebagai fungsi posisi dan waktu.
+b. Tentukan lokasi-lokasi node.
+c. Tentukan amplitude gelombang tegak, percepatan dan kecepatan maksimum transverse.
+2. [LO5] Sebuah ambulans mempunyai sirine mengeluarkan gelombang sinusoidal dengan frekuensi f_s=300 Hz. Kecepatan suara adalah 340 m/s dan udara tidak bergerak.
+a. Tentukan panjang gelombang jika sirine tidak bergerak!
+b. Tentukan panjang gelombang di depan dan belakang sirine jika bergerak 30 m/s!
+3. Perhatikan diagram pV yang menunjukkan rangkaian proses termodinamika di bawah ini. Pada proses ab, kalor sejumlah 150 J ditambahkan ke sistem dan pada proses bd, kalor sejumlah 600 J ditambahkan ke sistem.
+a. Tentukan perubahan internal energy pada proses ab !
+b. Tentukan perubahan internal energy pada proses abd !
+c. Tentukan kalor total yang ditambahkan pada proses acd !
+4. Sebuah mesin berbahan bakar bensin mengambil 10.000 J kalor dan menghasilkan 2000 J kerja mekanis pada setiap siklusnya. Kalor diperoleh dari pembakaran bensin pada ruang bakar L_c=5,0×10^4  J\/g. 
+a. Berapa efisiensi termal mesin tersebut?
+b. Berapa banyak kalor yang dibuang oleh mesin tersebut?
+c. Jika mesin melakukan 25 langkah setiap detiknya, berapa daya keluaran dalam watt dan tenaga kuda?
+d. Berapa banyak bensin yang dibakar dalam setiap siklusnya? 
+e. Berapa banyak bensin yang dibakar setiap detik dan setiap jam?

@@ -1,0 +1,46 @@
+{% extends 'based.html' %}
+{% load static %}
+{% block title %}
+
+<span style="color:#976dd8;">Indikator</span>
+{% endblock title %}
+{% block content %}
+
+</style></head><div style="display: flex; flex-direction: row;">
+<h4 style="opacity: 0.5;text-align: center; padding: 18px 0; margin-top:10px;">Detail Paket Soal</h4>
+<div style="margin-left: 84px">
+	  <h4 style=" padding: 16px 0; border-top: 2px solid #2f245c; margin-top:10px;">Pilih Indikator</h4>
+</div></div><div class="row">
+
+
+<div class="col-md-12">
+  {% for penugasan in penugasan_data %}
+	<div class="card">
+		<div class="card-header" style="background:#2f245c;font-size:12px;font-weight:700;color:white;padding-bottom:10px;padding-left: 30px;">
+    </div>
+		<div class="card-body" style="margin-top: 10px;">
+		  <div class="row">
+				<div class="col-lg-10" style="align-items: center; margin:0 15px;">
+          <h5><b>{{penugasan.kurikulum}} / {{penugasan.matakuliah}}</b></h5>
+          <h4>{{penugasan.learning_outcome}}</h4><br>
+		  <h5><b>Penulis</b> : {{penugasan.penulis}}</h5>
+          <h5><b>Materi</b> : {{penugasan.topik}}</h5>
+          <h5><b>Kompetendi Dasar</b> : {{penugasan.student_outcome}}</h5>
+				</div>
+				<div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin-right:5px;margin-bottom: 10px;">
+					<form method="POST" action="">
+						{% csrf_token %}
+						<input type="hidden" name="id" value="{{penugasan.id}}">
+						<input type="hidden" name="type" value="pilih">
+						<button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Pilih</button>
+					</form>
+				</div>
+			</div>      
+		</div>
+  </div>
+  {%endfor%}
+</div>
+        
+
+
+{% endblock content %}

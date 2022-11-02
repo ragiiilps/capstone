@@ -1,0 +1,4 @@
+Perhatikan diagram pV yang menunjukkan rangkaian proses termodinamika di bawah ini. Pada proses ab, kalor sejumlah 150 J ditambahkan ke sistem dan pada proses bd, kalor sejumlah 600 J ditambahkan ke sistem.
+a. Tentukan perubahan internal energy pada proses ab !
+b. Tentukan perubahan internal energy pada proses abd !
+c. Tentukan kalor total yang ditambahkan pada proses acd !

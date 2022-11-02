@@ -1,0 +1,360 @@
+{% extends 'based.html' %} {% block title %}
+
+<span style="color: #976dd8">Variabel</span>
+{% endblock title %} {% block content %} {% load static %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+  src="{% static 'js/imgupload/upload.js' %}"
+  type="text/javascript"
+></script>
+<div style="display: flex; flex-direction: row">
+  <h4 style="opacity: 0.5; padding: 18px 0; margin-top: 10px">Soal</h4>
+  <div style="margin-left: 84px">
+    <h4
+      style="
+        text-align: center;
+        border-top: 2px solid #2f245c;
+        padding: 16px 0;
+        margin-top: 10px;
+      "
+    >
+      Variabel
+    </h4>
+  </div>
+  <div style="margin-left: 84px">
+    <h4 style="opacity: 0.5; padding: 18px 0; margin-top: 10px">Generate</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div
+        class="card-header"
+        style="
+          background: #2f245c;
+          text-align: center;
+          color: white;
+          padding-bottom: 10px;
+        "
+      >
+        <b>Identitas</b>
+        <div class="popup4" style="float: right" onclick="myFunction4()">
+          ?
+          <span class="popuptext4" id="myPopup4"
+            >Stem yang dibuat beserta variabel yang ingin diubah</span
+          >
+        </div>
+        <script>
+          function myFunction4() {
+            var popup4 = document.getElementById("myPopup4");
+            popup4.classList.toggle("show");
+          }
+        </script>
+      </div>
+      <div class="card-body">
+        <table border="0" width="100%">
+          <tr class="data-tr">
+            <td width="15%" valign="top">
+              <b>Soal</b>
+            </td>
+            <td width="1%" valign="top">:</td>
+            <td width="84%" style="" valign="top">
+              {{ request.session.stem|safe }}
+            </td>
+          </tr>
+          <!-- <tr class="data-tr">
+							<td>
+								<b>Jumlah Soal</b>
+							</td>
+							<td>:</td>
+							<td>{{ request.session.amount }}</td>
+						</tr> -->
+          <tr class="data-tr">
+            <td>
+              <b>Pembangkitan</b>
+            </td>
+            <td>:</td>
+            <td>{{ request.session.arrange }}</td>
+          </tr>
+          <tr class="data-tr">
+            <td>
+              <b>Variabel</b>
+            </td>
+            <td>:</td>
+            <td>{{ request.session.var_name }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+<div>
+  {% block aig %}
+
+  <form method="POST" action="">
+    {% csrf_token %}
+    <input type="hidden" name="soal" value="{{ request.session.stem }}" />
+    <input type="hidden" name="jumitem" value="{{ request.session.amount }}" />
+    <input type="hidden" name="acak" value="{{ request.session.arrange }}" />
+    <input type="hidden" name="var1" value="{{ request.session.var_name }}" />
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div
+            class="card-header"
+            style="
+              background: #2f245c;
+              text-align: center;
+              color: white;
+              padding-bottom: 10px;
+            "
+          >
+            <b>Variabel</b>
+            <div class="popup5" style="float: right" onclick="myFunction5()">
+              ?
+
+              <span class="popuptext5" id="myPopup5"
+                >Isikan variabel dengan angka atau gambar yang ingin dipakai,
+                pastikan akhiri setiap variabel dengan ';' kecuali variabel
+                terakhir. Contoh: [x]:2;[y]:1</span
+              >
+            </div>
+            <script>
+              function myFunction5() {
+                var popup5 = document.getElementById("myPopup5");
+                popup5.classList.toggle("show");
+              }
+            </script>
+          </div>
+          <div class="card-body">
+            <textarea
+              class="tinymce"
+              id="var"
+              name="variabel"
+              rows="4"
+              style="border-radius: 5px; border: 1px solid silver; width: 100%"
+            >
+            {{ request.session.var_form_value }}
+            </textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div
+            class="card-header"
+            style="
+              background: #2f245c;
+              text-align: center;
+              color: white;
+              padding-bottom: 10px;
+            "
+          >
+            <b>Rumus</b>
+            <div class="popup6" style="float: right" onclick="myFunction6()">
+              ?
+
+              <span class="popuptext6" id="myPopup6"
+                >Tuliskan rumus untuk memudahkan perhitungan opsi</span
+              >
+            </div>
+
+            <script>
+              function myFunction6() {
+                var popup6 = document.getElementById("myPopup6");
+                popup6.classList.toggle("show");
+              }
+            </script>
+          </div>
+          <div class="card-body">
+            <textarea
+              name="multirumus"
+              rows="4"
+              style="border-radius: 5px; border: 1px solid silver; width: 100%"
+            >
+{% if request.session.formula %}{{ request.session.formula }}{% else %}---{% endif %}</textarea
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="card">
+										<div class="card-header" style="background:#2f245c;text-align:center;color:white;padding-bottom:10px;">
+											<b>Variabel Gambar</b>
+											<div class="popup7" style="float:right" onclick="myFunction8()">?
+				    
+												<span class="popuptext7" id="myPopup8">Pilih gambar yang akan dijadikan variabel</span>
+											</div>
+											<script>
+												function myFunction8() {
+												var popup5 = document.getElementById("myPopup8");
+												popup5.classList.toggle("show");
+												}
+    			
+											</script>
+											</div>
+											<div class="card-body">
+												<select id='variablenames' 
+													onchange = "if ($('#variablenames').val() == 'other'){
+																	$('#var-name').show();
+																} else {
+																	$('#var-name').hide();
+																}" style="width: 50%;">
+													<option value="0">-----Pilih Nama Variabel-----</option>
+													<option value="other">-----Tambah Baru------</option>
+												</select>
+												<input type="text" name="variablename" id="var-name" style='display:none; margin-top: 10px;' placeholder="Nama Variabel"/>
+												<br>
+
+													<input type="file" name="images" id="imageUpload" accept=".png, .jpg, .jpeg" multiple style='margin-top: 10px;'>
+												<button type="button" id="btn-upload">Upload</button>
+														
+													
+														<textarea id="text-area1" rows="5" style="width: 100%;margin-top: 10px;">---</textarea>
+												
+													</div>
+												</div> -->
+
+    <div class="card">
+      <div
+        class="card-header"
+        style="
+          background: #2f245c;
+          text-align: center;
+          color: white;
+          padding-bottom: 10px;
+        "
+      >
+        <b>Opsi Jawaban</b>
+        <div class="popup7" style="float: right" onclick="myFunction7()">
+          ?
+
+          <span class="popuptext7" id="myPopup7"
+            >Tuliskan opsi yang ingin digenerate. Contoh: A. [y] (hasil
+            perhitungan y) B. [y]/2 (setengah hasil perhitungan)</span
+          >
+        </div>
+        <script>
+          function myFunction7() {
+            var popup7 = document.getElementById("myPopup7");
+            popup7.classList.toggle("show");
+          }
+        </script>
+      </div>
+      <div class="card-body">
+        <textarea class="tinymce" name="opsi" id="option" required="required">
+          {% if request.session.option %}
+          {{ request.session.option }}
+          {% endif %}
+        </textarea>
+        {% comment %}
+        <textarea name="opsi" id="option" required="required">
+          {% if request.session.option %}
+          {{ request.session.option }}
+          {% endif %}
+        </textarea>
+        {% endcomment %}
+      </div>
+    </div>
+    <textarea name="img_var" id="img_var" cols="40" rows="5" hidden>
+---</textarea
+    >
+
+    {% if form.errors %}
+
+    <div class="card">
+      <div class="card-header">
+        <b>Error</b>
+      </div>
+      <div class="card-body">
+        {% for field in form %} {% for error in field.errors %}
+
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %} {% endfor %} {% for error in form.non_field_errors %}
+
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <button
+      type="submit"
+      class="btn btn-info btn-fill pull-right btn-primary"
+      style="cursor: pointer"
+    >
+      Generate
+    </button>
+  </form>
+  <button
+    type="button"
+    class="btn btn-info btn-fill pull-right btn-primary"
+    onclick="window.history.back()"
+    style="margin: 0px 10px 10px 10px"
+  >
+    Kembali
+  </button>
+</div>
+
+{% comment %}
+<script
+  src="https://cdn.tiny.cloud/1/xuu9ccyzwhvds007n1uq6ljnv75mihm39xseqenbiybxza0x/tinymce/5/tinymce.min.js"
+  referrerpolicy="origin"
+></script>
+{% endcomment %} {% load static %}
+<script
+  type="text/javascript"
+  src="{% static 'tinymce/js/tinymce/tinymce.min.js' %}"
+></script>
+<script>
+  tinymce.init({
+    selector: ".tinymce#var", // change this value according to your HTML
+    images_upload_url: "/uploadimg/", // Image upload address in Django route
+
+    height: 456,
+    plugins:
+      "fullscreen advlist autolink image lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template paste help eqneditor",
+    toolbar:
+      "fullscreen undo redo styleselect bold italic alignleft aligncenter alignright alignjustify " +
+      "uploadimage link image eqneditor",
+    paste_data_images: true,
+    forced_root_block: "",
+    menu: {
+      favs: {
+        title: "My Favorites",
+        items: "code visualaid searchreplace emoticons",
+      },
+    },
+    menubar: "favs file edit view insert format tools table help",
+  });
+</script>
+<script>
+  tinymce.init({
+    selector: ".tinymce#option", // change this value according to your HTML
+    images_upload_url: "/uploadimg/", // Image upload address in Django route
+
+    height: 456,
+    plugins:
+      "fullscreen eqneditor advlist autolink image lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template paste help",
+    toolbar:
+      "fullscreen undo redo styleselect bold italic alignleft aligncenter alignright alignjustify " +
+      "uploadimage link image eqneditor",
+    paste_data_images: true,
+    menu: {
+      favs: {
+        title: "My Favorites",
+        items: "code visualaid searchreplace emoticons",
+      },
+    },
+    menubar: "favs file edit view insert format tools table help",
+  });
+</script>
+{% endblock aig %}

@@ -1,0 +1,4 @@
+Kinetik 1
+Pemain ski memiliki bobot 70 kg melaju pada bidang miring yang sangat licin (gesekan diabaikan) dengan kemiringan 10o. 
+Kecepatan awalnya 7,2 km/jam.
+Berapa kecepatan akhirnya bila dihitung dengan metode : Energi kinetic.

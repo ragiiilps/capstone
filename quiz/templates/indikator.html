@@ -1,0 +1,68 @@
+{% extends 'based.html' %}
+{% load static %}
+{% block title %}
+<span style="color:#976dd8;">Penugasan Soal</span>
+{% endblock title %}
+{% block content %}
+
+
+<div style="display: flex; flex-direction: row;">
+	<h4 style="text-align: center;border-top: 2px solid #2f245c; padding: 16px 0; margin-top:10px;">Pembuatan Soal</h4>
+</div>
+<div class="row">
+    <div class="col-md-12" style="margin-bottom: 10px;">
+        <div style="display: flex; flex-direction: row;justify-content: space-between;">
+        <h3 style="padding: 0 16px 16px 10;">Pembuatan Soal</h3>
+        <a href="{% url 'buatindikator' %}">
+            <button type="submit" class="btn btn-info btn-fill pull-right btn-primary" style="margin:17px 10px 10px 10px;">Tambah Soal</button>
+        </a>
+        </div>
+    </div>
+    <div class="col-md-12">
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;text-align:left;color:white;padding-bottom:10px;">
+			</div>
+			<div class="card-body ">
+                <table style="overflow-x: scroll;overflow-y: scroll;">
+                    <thead>
+                        <tr>
+                            <th scope="col" width="5%">No</th>
+                            <th scope="col" width="5%">Kurikulum</th>
+                            <th scope="col" width="10%">Mata Kuliah</th>
+                            <th scope="col" width="20%">Student Outcome</th>
+                            <th scope="col" width="10%">Learning Outcome</th>
+                            <th scope="col" width="15%">Topik</th>
+                            <th scope="col" width="10%">Jumlah Soal</th>
+                            <th scope="col" width="10%"></th>
+                        </tr>
+                        {% for tugas in tugas_data %}
+                        <tr>
+                            <td valign="top" class="data-tr" style="padding-top:8px; text-align: left;">{{tugas.order}}</td>
+                            <td valign="top" class="data-tr" style="padding-top:8px; text-align: center;">{{ tugas.kurikulum }}</td>
+                            <td valign="top" class="data-tr" style="padding-top:8px;">{{ tugas.mata_kuliah }}</td>
+                            <td valign="top" class="data-tr" style="padding-top:8px; ">{{ tugas.student_outcome }}</td>
+                            <td valign="top" class="data-tr" style="padding-top:8px; ">{{ tugas.learning_outcome }}</td>
+                            <td valign="top" class="data-tr" style="padding-top:8px; text-align: center;">{{ tugas.topik }}</td>
+                            <td valign="top" class="data-tr" style="padding-top:8px; text-align: center;">{{ indikator.count }}</td>
+                            <td valign="top" class="data-tr">
+                                <form method="POST" action="">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id" value="{{tugas.id}}">
+                                    <input type="hidden" name="type" value="detail">
+                                    <button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Detail</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+
+                    </thead>
+                </table>
+		    </div>
+		</div>
+	</div>
+</div>
+	
+
+
+{% endblock content %}

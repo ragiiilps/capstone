@@ -1,0 +1,148 @@
+{% extends 'based.html' %} {% block title %}
+<span style="color: #976dd8">Data Soal</span>
+{% endblock title %} {% block content %}
+
+<div style="display: flex; flex-direction: row">
+  <h4
+    style="
+      text-align: center;
+      border-top: 2px solid #2f245c;
+      padding: 16px 0;
+      margin-top: 10px;
+    "
+  >
+    Paket Soal
+  </h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12" style="margin-bottom: 10px">
+    <div
+      style="display: flex; flex-direction: row; justify-content: space-between"
+    >
+      <h3 style="padding: 0 16px 16px 10">Daftar Paket Soal</h3>
+      <a href="{% url 'buatpaketsoal' %}">
+        <button
+          type="submit"
+          class="btn btn-info btn-fill pull-right btn-primary"
+          style="margin: 17px 10px 10px 10px"
+        >
+          Buat Paket Soal
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    {%for paket in paket_soal%}
+    <div class="card">
+      <div
+        class="card-header"
+        style="
+          background: #2f245c;
+          color: white;
+          padding-bottom: 10px;
+          padding-left: 30px;
+        "
+      >
+        {{paket.judul}}
+      </div>
+      <div class="card-body" style="margin-top: 10px">
+        <div class="row">
+          <div class="col-lg-9" style="margin: 0 15px">
+            <h5>Kurikulum {{paket.kurikulum}}</h5>
+            <h5></h5>
+
+            {%if paket.is_generated == 0 %}
+            <h5>Created at {{paket.created_date}} - Not yet generated</h5>
+            {%else%}
+            <h5>
+              Created at {{paket.created_date}} - Generated at
+              {{paket.generated_date}}
+            </h5>
+            {%endif%}
+          </div>
+          {%if paket.is_generated == 0 %}
+          <div
+            class="col-lg-1"
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 14px;
+              margin-bottom: 10px;
+            "
+          >
+            <form method="POST" action="">
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{ paket.id }}" />
+              <input type="hidden" name="type" value="detail" />
+              <button type="submit" class="btn btn-fill pull-right btn-primary">
+                Detail
+              </button>
+            </form>
+          </div>
+          <div
+            class="col-lg-1"
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 10px;
+            "
+          >
+            <form action="" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{ paket.id }}" />
+              <input type="hidden" name="type" value="hapus" />
+              <button
+                type="submit"
+                class="btn btn-info btn-fill pull-right btn-primary"
+                onclick="return confirm('Apakah akan dihapus ?')"
+              >
+                Hapus
+              </button>
+            </form>
+          </div>
+          {%elif paket.is_generated == 1%}
+          <div
+            class="col-lg-1"
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 14px;
+              margin-bottom: 10px;
+            "
+          ></div>
+          <div
+            class="col-lg-1"
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 14px;
+              margin-bottom: 10px;
+            "
+          >
+            <form method="POST" action="">
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{ paket.id }}" />
+              <input type="hidden" name="type" value="detail" />
+              <button
+                type="submit"
+                class="btn btn-info btn-fill pull-right btn-primary"
+              >
+                Detail
+              </button>
+            </form>
+          </div>
+          {%endif%}
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+
+{% endblock content %}

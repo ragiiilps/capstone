@@ -1,0 +1,2 @@
+Kinematika 2D 1
+Sebuah mobil melaju dengan kecepatan konstan 72 km/jam. Tiba-tiba di depannya terdapat jurang sedalam 10 meter. Berapa jauh mobil akan mendarat? [Buat model secukupnya.]

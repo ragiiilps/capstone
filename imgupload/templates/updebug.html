@@ -1,0 +1,41 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/imgupload/upload.js' %}" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>upload debug</h1>
+
+<div>
+    <select id='variablenames' 
+    onchange = "if ($('#variablenames').val() == 'other'){
+                    $('#var-name').show();
+                    $('#addnewbtn').show();
+                } else {
+                    $('#var-name').hide();
+                    $('#addnewbtn').hide();
+                }">
+        <option value="0">-----Pilih Nama Variabel-----</option>
+        <option value="other">Tambah Baru</option>
+    </select>
+        <input type="text" name="variablename" id="var-name" style='display:none' placeholder="Nama Variabel"/>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="file" name="images" id="imageUpload" accept=".png, .jpg, .jpeg" multiple>
+    </form>
+
+    <button type="button" id="btn-upload">Upload</button>
+
+    <textarea id="text-area1" cols="50" rows="20">---</textarea>
+    <h3 id="result">
+        <span> </span>
+    </h3>
+</div>
+
+</body>
+</html>

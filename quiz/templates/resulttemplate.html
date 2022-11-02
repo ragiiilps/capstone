@@ -1,0 +1,118 @@
+{% extends 'based.html' %} {% load static %} {% load extras %} {% block title %}
+
+<span style="color: #976dd8">Generate</span>
+{% endblock title %}
+
+<div>
+  {% block content %}
+
+  <div class="alert alert-primary">
+    <span>
+      <b> Data template berhasil disimpan </b>, anda dapat melihat pada menu
+      Template</span
+    >
+  </div>
+
+  {% comment %} {% if request.GET.edit %}
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body" style="margin-top: -5px">
+        <form
+          id="simpan1"
+          class="form"
+          action="{% url 'simpan' %}"
+          method="GET"
+        >
+          <input type="hidden" name="type" value="update" />
+          <input type="hidden" name="id" value="{{ request.GET.id }}" />
+        </form>
+        <span style="margin-right: 20px"><b>Update Soal</b></span>
+      </div>
+      <div class="card-footer">
+        <a
+          class="btn btn-primary btn-fill"
+          href="#"
+          onclick="document.forms['simpan1'].submit();"
+          >Simpan</a
+        >
+      </div>
+    </div>
+    <!-- <div class="card">
+		<div class="card-body" style="margin-top:-5px;">
+			<span style="margin-right:20px;"><b>Simpan Sebagai Soal Baru</b></span>
+			<form id="simpan2" class="form" action="{% url 'simpan' %}" method="GET">
+				  <div class="form-group my-2">
+					<input type="text" name="namasoal" class="form-control" value="" placeholder="Judul Soal" required="required">
+				  </div>
+			</form>
+		</div>
+		<div class="card-footer">
+			<a class="btn btn-primary btn-fill" href="#" onclick="document.forms['simpan2'].submit();">Simpan</a>
+		</div>
+	</div> -->
+  </div>
+  {% endcomment %}
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body" style="margin-top: -5px">
+          <span style="margin-right: 20px"><b>Simpan Template</b></span>
+          <form class="form" action="{% url 'simpantemplate' %}" method="GET">
+            <div class="form-group my-2">
+              <input
+                type="text"
+                name="judultemplate"
+                class="form-control"
+                value=""
+                placeholder="Judul Template"
+                required="required"
+              />
+            </div>
+            <button type="submit" class="btn btn-info btn-primary btn-fill">
+              Simpan Template
+            </button>
+            <a
+              href="javascript:history.go(-1)"
+              class="btn btn-info btn-fill pull-right btn-primary"
+              >Kembali</a
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    {% for soal, t in request.session.question|zip:request.session.answer %}
+    <div class="col-md-12">
+      <div class="card">
+        <div
+          class="card-header"
+          style="background: #2f245c; color: white; padding-bottom: 10px"
+        ></div>
+        <div class="card-body">
+          <b>{{ soal|safe }}</b>
+        </div>
+        <div class="container-fluid mb-3">
+          <hr />
+          {% for j in t %} {{ j|safe }}<br />
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% endblock content %}
+</div>
+
+<div>
+  {% block aig %} {{ KmsVarVal }} <br />
+  {{ keynya }} <br />
+  {{ hsl }} <br />
+  {{ KmsVarBaru }} <br />
+  {{ VarnVal }} <br />
+  {{ VarBaru }} <br />
+  {{ jawaban }} {% endblock aig %}
+</div>

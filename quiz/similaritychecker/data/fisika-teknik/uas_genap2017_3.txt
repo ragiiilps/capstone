@@ -1,0 +1,5 @@
+Suatu sistem terdiri dari dua kubus identik, masing-masing bermassa m. Kedua kubus ini
+dihubungkan oleh seutas tali dan suatu pegas tak bermassa yang terkompres/tertekan, yang
+mempunyai konstanta pegas k. Pada suatu ketika tali penghubung kubus dibakar, hitung
+berapa besar pegas mula-mula harus tertekan agar kubus yang bawah akan terangkat. Hitung
+kenaikan pusat massanya, jika pegas mula-mula tertekan sebesar Δl = 7 mg/k!

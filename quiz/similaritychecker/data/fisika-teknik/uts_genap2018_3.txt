@@ -1,0 +1,5 @@
+Relasi perpindahan sebuah partikel terhadap waktu dapat digambarkan dengan persamaan: s=2t2+ 3. 
+a. buat sketsa kurvanya.
+b. tentukan persamaan kecepatan dan buat sketsa kurvanya.
+c. tentukan persamaan percepatan dan buat sketsa kurvanya.
+d. berapakah kecepatan partikel pada detik ke 100 dan 1000?

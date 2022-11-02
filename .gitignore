@@ -1,0 +1,6 @@
+env
+.idea
+*.pyc
+*.zip
+playground
+aig/settings.py

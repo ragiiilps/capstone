@@ -1,0 +1,101 @@
+{% extends 'based.html' %} {% block title %}
+<span style="color: #976dd8">Data Soal</span>
+{% endblock title %} {% block content %}
+
+<div style="display: flex; flex-direction: row">
+  <h4
+    style="
+      text-align: center;
+      border-top: 2px solid #2f245c;
+      padding: 16px 0;
+      margin-top: 10px;
+    "
+  >
+    Paket Soal
+  </h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12" style="margin-bottom: 10px">
+    <div
+      style="display: flex; flex-direction: row; justify-content: space-between"
+    >
+      <h3 style="padding: 0 16px 16px 10">Daftar Paket Soal</h3>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    {%for paket in paket_soal%} {%if paket.status != 1%}
+    <div class="card">
+      <div
+        class="card-header"
+        style="
+          background: #2f245c;
+          color: white;
+          padding-bottom: 10px;
+          padding-left: 30px;
+        "
+      >
+        {{paket.judul}}
+      </div>
+      <div class="card-body" style="margin-top: 10px">
+        <div class="row">
+          <div class="col-lg-8" style="margin: 0 15px">
+            <h5>Kurikulum {{paket.kurikulum}}</h5>
+            <h5></h5>
+            <h5>Semester {{paket.semester}}</h5>
+            <h5></h5>
+          </div>
+          <div
+            class="col-lg-1"
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 60px;
+              margin-bottom: 10px;
+            "
+          >
+            <form method="POST" action="">
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{ paket.id }}" />
+              <input type="hidden" name="type" value="review" />
+              <button
+                type="submit"
+                class="btn btn-info btn-fill pull-right btn-primary"
+              >
+                Pilih Reviewer
+              </button>
+            </form>
+          </div>
+          <div
+            class="col-lg-1"
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 14px;
+              margin-bottom: 10px;
+              margin-left: 20px;
+            "
+          >
+            <form method="POST" action="">
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{ paket.id }}" />
+              <input type="hidden" name="type" value="daftar" />
+              <button
+                type="submit"
+                class="btn btn-info btn-fill pull-right btn-primary"
+              >
+                Daftar Reviewer
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%endif%} {%endfor%}
+  </div>
+</div>
+
+{% endblock content %}

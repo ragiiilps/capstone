@@ -1,0 +1,334 @@
+{% extends 'based.html' %} {% load static %} {% block title %}
+<span style="color: #976dd8">Soal</span>
+{% endblock title %} {% block content %}
+<div style="display: flex; flex-direction: row">
+  <h4
+    style="
+      text-align: center;
+      border-top: 2px solid #2f245c;
+      padding: 16px 0;
+      margin-top: 10px;
+    "
+  >
+    Soal
+  </h4>
+  <div style="margin-left: 84px">
+    <h4 style="opacity: 0.5; padding: 18px 0; margin-top: 10px">Variabel</h4>
+  </div>
+  <div style="margin-left: 84px">
+    <h4 style="opacity: 0.5; padding: 18px 0; margin-top: 10px">Generate</h4>
+  </div>
+</div>
+
+<form name="f" method="post" action="">
+	{% csrf_token %}
+	<input class="form-control" value="5" type="hidden" name="jum_soal" required="required" style="margin: 2.5px;">
+	<div class="row">
+		<div class="col">
+			<div class="card">
+				<div class="card-header"
+					style="background:#2f245c;font-size:12px;text-align:center;color:white;padding-bottom:10px;">
+					<b>Pengacakan</b>
+					<div class="popup2" style="float:right" onclick="myFunction2()">?
+						<span class="popuptext2" id="myPopup2">Metode pembangkitan yang ingin dipilih</span>
+					</div>
+					<script>
+						function myFunction2() {
+							var popup2 = document.getElementById("myPopup2");
+							popup2.classList.toggle("show");
+						}
+					</script>
+				</div>
+				<div class="card-body">
+					<div class="radio-toolbar">
+						{% if request.session.arrange == 'kombinasi' %}
+						<input type="radio" id="radiomapping" name="acak" value="mapping">
+						<label for="radiomapping">
+							<img src="{% static 'img/mapping.png'%}" style="height:15px;margin: 0px 20px 1px 0px;">
+							Mapping</label>
+						<input type="radio" id="radiokombinasi" name="acak" value="kombinasi" checked>
+						<label for="radiokombinasi">
+							<img src="{% static 'img/kombinasi.png'%}" style="height:15px;margin: 0px 20px 1px 0px;">
+							Kombinasi</label>
+						{% else %}
+						<input type="radio" id="radiomapping" name="acak" value="mapping" checked>
+						<label for="radiomapping">
+							<img src="{% static 'img/mapping.png'%}" style="height:15px;margin: 0px 20px 1px 0px;">
+							Mapping</label>
+						<input type="radio" id="radiokombinasi" name="acak" value="kombinasi">
+						<label for="radiokombinasi">
+							<img src="{% static 'img/kombinasi.png'%}" style="height:15px;margin: 0px 20px 1px 0px;">
+							Kombinasi</label>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="card">
+		<div class="card-header"
+			style="background:#2f245c;text-align:center;color:white;font-size:12px;padding-bottom:10px;">
+			<b>Soal</b>
+			<div class="popup3" style="float:right" onclick="myFunction3()">?
+				<span class="popuptext3" id="myPopup3">Tulis stem (parent) soal disini (gunakan '[ ]' untuk variabel
+					yang ingin diubah-ubah)</span>
+			</div>
+			<script>
+				function myFunction3() {
+					var popup3 = document.getElementById("myPopup3");
+					popup3.classList.toggle("show");
+				}
+			</script>
+		</div>
+
+		<div class="card-body">
+			<textarea name="soal" class="tinymce">
+				{% if request.session.stem %}
+						{{ request.session.stem }}
+					  {% endif %}
+			  </textarea> 
+			  {% comment %} <textarea name="soal" class='ckeditor' id="ckeditor" required="required">
+				</textarea>  {% endcomment %}
+		</div>
+	</div>
+
+	{% if uji_kualitas %}
+	<div class="card">
+		<div class="card-header"
+			style="background:#2f245c;text-align:center;color:white;font-size:12px;padding-bottom:10px;">
+			<b>Kualitas Soal</b>
+			<div class="popup4" style="float:right" onclick="myFunction3()">?
+				<span class="popuptext4" id="myPopup4">Penilaian kualitas soal berdasarkan kemiripan dari ujian sebelumnya</span>
+			</div>
+			<script>
+				function myFunction3() {
+					var popup4 = document.getElementById("myPopup4");
+					popup4.classList.toggle("show");
+				}
+			</script>
+		</div>
+
+		<div class="card-body">
+			<div class="row">
+				<div class="col-lg-5" style="align-items: center; margin:0 15px;">
+					<h4><b>Kemiripan Pertama</b></h4>
+					<h4><b>{{ first_closest.similarity }}%</b> mirip dengan soal nomor {{ first_closest.quality.7 }}
+						<br><a href="{{ first_link }}" target="_new">{{ first_closest.name }}</a></h4>
+						<div class="popup5" style="float:right" onclick="myFunction4()">?
+							<span class="popuptext5" id="myPopup5">Index Difficulty merupakan tingkat kesulitan dari pengerjaan soal</span>
+						</div>
+						<script>
+							function myFunction4() {
+								var popup5 = document.getElementById("myPopup5");
+								popup5.classList.toggle("show");
+							}
+						</script>
+					<h4>Index Difficulty: <b>{{ first_closest.quality.0 }}</b></h4>
+					<div class="popup6" style="float:right" onclick="myFunction5()">?
+						<span class="popuptext6" id="myPopup6">Varians merupakan ukuran seberapa jauh nilai hasil ujian tersebar</span>
+					</div>
+					<script>
+						function myFunction5() {
+							var popup6 = document.getElementById("myPopup6");
+							popup6.classList.toggle("show");
+						}
+					</script>
+					<h5>Varians: <b>{{ first_closest.quality.1 }}</b></h5>
+					<div class="popup7" style="float:right" onclick="myFunction6()">?
+						<span class="popuptext7" id="myPopup7">Kuartil pertama merupakan nilai tengah antara nilai terkecil dan median dari kelompok data</span>
+					</div>
+					<script>
+						function myFunction6() {
+							var popup7 = document.getElementById("myPopup7");
+							popup7.classList.toggle("show");
+						}
+					</script>
+					<h5>Kuartil Pertama: <b>{{ first_closest.quality.2 }}</b></h5>
+					<div class="popup7" style="float:right" onclick="myFunction7()">?
+						<span class="popuptext7" id="myPopup8">Median merupakan nilai tengah dari kelompok data</span>
+					</div>
+					<script>
+						function myFunction7() {
+							var popup8 = document.getElementById("myPopup8");
+							popup8.classList.toggle("show");
+						}
+					</script>
+					<h5>Median: <b>{{ first_closest.quality.3 }}</b></h5>
+					<div class="popup2" style="float:right" onclick="myFunction8()">?
+						<span class="popuptext2" id="myPopup9">Kuartil ketiga adalah nilai tengah antara median dan nilai tertinggi dari kelompok data</span>
+					</div>
+					<script>
+						function myFunction8() {
+							var popup9 = document.getElementById("myPopup9");
+							popup9.classList.toggle("show");
+						}
+					</script>
+					<h5>Kuartil Ketiga: <b>{{ first_closest.quality.4 }}</b></h5>
+					<div class="popup2" style="float:right" onclick="myFunction9()">?
+						<span class="popuptext2" id="myPopup10">Skewness merupakan statistik yang digunakan dalam memberikan gambaran distribusi data apakah miring ke kiri, ke kanan atau simetris</span>
+					</div>
+					<script>
+						function myFunction9() {
+							var popup10 = document.getElementById("myPopup10");
+							popup10.classList.toggle("show");
+						}
+					</script>
+					<h5>Skewness: <b>{{ first_closest.quality.5 }}</b></h5>
+					<div class="popup2" style="float:right" onclick="myFunction10()">?
+						<span class="popuptext2" id="myPopup11">Kurtosis merupakan statistik yang digunakan dalam memberikan gambaran apakah distribusi data cenderung rata atau runcing</span>
+					</div>
+					<script>
+						function myFunction10() {
+							var popup11 = document.getElementById("myPopup11");
+							popup11.classList.toggle("show");
+						}
+					</script>
+					<h5>Kurtosis: <b>{{ first_closest.quality.6 }}</b></h5>
+				</div>
+				<div class="col-lg-5" style="align-items: center; margin:0 15px;">
+					<h4><b>Kemiripan Kedua</b></h4>
+					<h4><b>{{ second_closest.similarity }}%</b> mirip dengan soal nomor {{ second_closest.quality.7 }}
+						<br><a href="{{ second_link }}" target="_new">{{ second_closest.name }}</a></h4>
+						<div class="popup5" style="float:right" onclick="myFunction11()">?
+							<span class="popuptext5" id="myPopup12">Index Difficulty merupakan tingkat kesulitan dari pengerjaan soal</span>
+						</div>
+						<script>
+							function myFunction11() {
+								var popup5 = document.getElementById("myPopup12");
+								popup5.classList.toggle("show");
+							}
+						</script>
+					<h4>Index Difficulty: <b>{{ second_closest.quality.0 }}</b></h4>
+					<div class="popup6" style="float:right" onclick="myFunction12()">?
+						<span class="popuptext6" id="myPopup13">Varians merupakan ukuran seberapa jauh nilai hasil ujian tersebar</span>
+					</div>
+					<script>
+						function myFunction12() {
+							var popup6 = document.getElementById("myPopup13");
+							popup6.classList.toggle("show");
+						}
+					</script>
+					<h5>Varians: <b>{{ second_closest.quality.1 }}</b></h5>
+					<div class="popup7" style="float:right" onclick="myFunction13()">?
+						<span class="popuptext7" id="myPopup14">Kuartil pertama merupakan nilai tengah antara nilai terkecil dan median dari kelompok data</span>
+					</div>
+					<script>
+						function myFunction13() {
+							var popup7 = document.getElementById("myPopup14");
+							popup7.classList.toggle("show");
+						}
+					</script>
+					<h5>Kuartil Pertama: <b>{{ second_closest.quality.2 }}</b></h5>
+					<div class="popup7" style="float:right" onclick="myFunction14()">?
+						<span class="popuptext7" id="myPopup15">Median merupakan nilai tengah dari kelompok data</span>
+					</div>
+					<script>
+						function myFunction14() {
+							var popup8 = document.getElementById("myPopup15");
+							popup8.classList.toggle("show");
+						}
+					</script>
+					<h5>Median: <b>{{ second_closest.quality.3 }}</b></h5>
+					<div class="popup2" style="float:right" onclick="myFunction15()">?
+						<span class="popuptext2" id="myPopup16">Kuartil ketiga adalah nilai tengah antara median dan nilai tertinggi dari kelompok data</span>
+					</div>
+					<script>
+						function myFunction15() {
+							var popup9 = document.getElementById("myPopup16");
+							popup9.classList.toggle("show");
+						}
+					</script>
+					<h5>Kuartil Ketiga: <b>{{ second_closest.quality.4 }}</b></h5>
+					<div class="popup2" style="float:right" onclick="myFunction16()">?
+						<span class="popuptext2" id="myPopup17">Skewness merupakan statistik yang digunakan dalam memberikan gambaran distribusi data apakah miring ke kiri, ke kanan atau simetris</span>
+					</div>
+					<script>
+						function myFunction16() {
+							var popup10 = document.getElementById("myPopup17");
+							popup10.classList.toggle("show");
+						}
+					</script>
+					<h5>Skewness: <b>{{ second_closest.quality.5 }}</b></h5>
+					<div class="popup2" style="float:right" onclick="myFunction17()">?
+						<span class="popuptext2" id="myPopup18">Kurtosis merupakan statistik yang digunakan dalam memberikan gambaran apakah distribusi data cenderung rata atau runcing</span>
+					</div>
+					<script>
+						function myFunction17() {
+							var popup11 = document.getElementById("myPopup18");
+							popup11.classList.toggle("show");
+						}
+					</script>
+					<h5>Kurtosis: <b>{{ second_closest.quality.6 }}</b></h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+	{% if form.errors %}
+	<div class="card">
+		<div class="card-header">
+			<b>Error</b>
+		</div>
+		<div class="card-body">
+			{% for field in form %}
+			{% for error in field.errors %}
+			<div class="alert alert-danger">
+				<strong>{{ error|escape }}</strong>
+			</div>
+			{% endfor %}
+			{% endfor %}
+			{% for error in form.non_field_errors %}
+			<div class="alert alert-danger">
+				<strong>{{ error|escape }}</strong>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+
+	<button type="submit" name="selanjutnya" class="btn btn-info btn-fill pull-right btn-primary"
+		style="cursor:pointer;">Selanjutnya</button>
+	<button type="submit" name="uji-kualitas" class="btn btn-info btn-fill pull-right btn-primary"
+		style="cursor:pointer; margin:0px 10px 10px 0px;">Uji Kualitas</button>
+	<button type="button" class="btn btn-info btn-fill pull-right btn-primary" onclick="window.history.back()"
+		style="margin:0px 10px 10px 10px;">Kembali</button>
+</form>
+
+{% comment %} <script type = "text/javascript">
+  CKEDITOR.replace('ckeditor', {
+    height: 300,
+    extraPlugins : 'filebrowser'
+  });
+</script> {% endcomment %}
+
+{% comment %} <script src="https://cdn.tiny.cloud/1/xuu9ccyzwhvds007n1uq6ljnv75mihm39xseqenbiybxza0x/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>  {% endcomment %}
+{% load static %}
+<script type="text/javascript" src="{% static 'tinymce/js/tinymce/tinymce.min.js' %}"></script>  
+</script> 
+<script>
+  tinymce.init({
+		selector: '.tinymce',  // change this value according to your HTML
+    images_upload_url: '/uploadimg/', // Image upload address in Django route
+		
+		height: 456,
+    /*external_plugins: {
+        'eqneditor': 'plugins/eqneditor/plugin.min.js'
+    },*/
+    plugins : 
+    'fullscreen nonbreaking advlist autolink image lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template paste help eqneditor',
+    toolbar: 'fullscreen undo redo styleselect bold italic alignleft aligncenter alignright alignjustify ' +
+		  	'bullist numlist outdent indent link image print preview media fullpage ' +
+		  	'forecolor backcolor emoticons uploadimage eqneditor help',
+    paste_data_images: true,
+    forced_root_block: "",
+    nonbreaking_wrap: false,
+    menu: {
+      favs: {title: 'My Favorites', items: 'code visualaid searchreplace emoticons'}
+      },
+    menubar: 'favs file edit view insert format tools table help',
+	});
+</script>
+{% endblock content %}

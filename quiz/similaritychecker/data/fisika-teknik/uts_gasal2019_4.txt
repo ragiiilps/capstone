@@ -1,0 +1,7 @@
+Sebuah mesin menarik benda dengan massa 1.500 kg sejauh 100 m menanjak 10%, hingga benda
+bergerak dengan kecepatan awal 40 km/jam dan kecepatan sampai dengan posisi puncak adalah 60
+km/jam. Rasio gesekan terhadap gaya berat adalah 0,2, dan koefisien gesekan fungsi kecepatan
+diabaikan. Digunakan percepatan gravitasi 9,81 m/s2.
+a. Hitung kerja total yang dilakukan oleh mesin tersebut!
+b. Hitung waktu yang ditempuh oleh benda tersebut dari lembah hingga puncak!
+c. Hitung daya yang dikeluarkan oleh mesin tersebut!

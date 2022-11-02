@@ -1,0 +1,216 @@
+{% extends 'based.html' %} {% load static %} {% block title %}
+<span style="color: #976dd8">Soal</span>
+{% endblock title %} {% block content %}
+<div style="display: flex; flex-direction: row">
+  <h4
+    style="
+      text-align: center;
+      border-top: 2px solid #2f245c;
+      padding: 16px 0;
+      margin-top: 10px;
+    "
+  >
+    Template
+  </h4>
+  <div style="margin-left: 84px">
+    <h4 style="opacity: 0.5; padding: 18px 0; margin-top: 10px">Variabel</h4>
+  </div>
+  <div style="margin-left: 84px">
+    <h4 style="opacity: 0.5; padding: 18px 0; margin-top: 10px">Generate</h4>
+  </div>
+</div>
+
+<form name="f" method="post" action="">
+  {% csrf_token %}
+  <input
+    class="form-control"
+    value="5"
+    type="hidden"
+    name="jum_soal"
+    required="required"
+    style="margin: 2.5px"
+  />
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div
+          class="card-header"
+          style="
+            background: #2f245c;
+            font-size: 12px;
+            text-align: center;
+            color: white;
+            padding-bottom: 10px;
+          "
+        >
+          <b>Pengacakan</b>
+          <div class="popup2" style="float: right" onclick="myFunction2()">
+            ?
+            <span class="popuptext2" id="myPopup2"
+              >Metode pembangkitan yang ingin dipilih</span
+            >
+          </div>
+          <script>
+            function myFunction2() {
+              var popup2 = document.getElementById("myPopup2");
+              popup2.classList.toggle("show");
+            }
+          </script>
+        </div>
+        <div class="card-body">
+          <div class="radio-toolbar">
+            {% if request.session.arrange == 'kombinasi' %}
+            <input type="radio" id="radiomapping" name="acak" value="mapping" />
+            <label for="radiomapping">
+              <img
+                src="{% static 'img/mapping.png'%}"
+                style="height: 15px; margin: 0px 20px 1px 0px"
+              />
+              Mapping</label
+            >
+            <input
+              type="radio"
+              id="radiokombinasi"
+              name="acak"
+              value="kombinasi"
+              checked
+            />
+            <label for="radiokombinasi">
+              <img
+                src="{% static 'img/kombinasi.png'%}"
+                style="height: 15px; margin: 0px 20px 1px 0px"
+              />
+              Kombinasi</label
+            >
+            {% else %}
+            <input
+              type="radio"
+              id="radiomapping"
+              name="acak"
+              value="mapping"
+              checked
+            />
+            <label for="radiomapping">
+              <img
+                src="{% static 'img/mapping.png'%}"
+                style="height: 15px; margin: 0px 20px 1px 0px"
+              />
+              Mapping</label
+            >
+            <input
+              type="radio"
+              id="radiokombinasi"
+              name="acak"
+              value="kombinasi"
+            />
+            <label for="radiokombinasi">
+              <img
+                src="{% static 'img/kombinasi.png'%}"
+                style="height: 15px; margin: 0px 20px 1px 0px"
+              />
+              Kombinasi</label
+            >
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div
+      class="card-header"
+      style="
+        background: #2f245c;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+        padding-bottom: 10px;
+      "
+    >
+      <b>Soal</b>
+      <div class="popup3" style="float: right" onclick="myFunction3()">
+        ?
+        <span class="popuptext3" id="myPopup3"
+          >Tulis stem (parent) template soal disini (gunakan '[ ]' untuk variabel yang
+          ingin diubah-ubah)</span
+        >
+      </div>
+      <script>
+        function myFunction3() {
+          var popup3 = document.getElementById("myPopup3");
+          popup3.classList.toggle("show");
+        }
+      </script>
+    </div>
+
+    <div class="card-body">
+      <textarea name="soal" class="tinymce"></textarea> 
+    </div>
+  </div>
+
+  {% if form.errors %}
+  <div class="card">
+    <div class="card-header">
+      <b>Error</b>
+    </div>
+    <div class="card-body">
+      {% for field in form %} {% for error in field.errors %}
+      <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+      </div>
+      {% endfor %} {% endfor %} {% for error in form.non_field_errors %}
+      <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  <button
+    type="submit"
+    class="btn btn-info btn-fill pull-right btn-primary"
+    style="cursor: pointer"
+  >
+    Selanjutnya
+  </button>
+  <button
+    type="button"
+    class="btn btn-info btn-fill pull-right btn-primary"
+    onclick="window.history.back()"
+    style="margin: 0px 10px 10px 10px"
+  >
+    Kembali
+  </button>
+</form>
+{% comment %} <script type = "text/javascript">
+CKEDITOR.replace('ckeditor', {
+    height: 300,
+    extraPlugins : 'filebrowser'
+  });
+</script> {% endcomment %}
+{% comment %} <script src="https://cdn.tiny.cloud/1/xuu9ccyzwhvds007n1uq6ljnv75mihm39xseqenbiybxza0x/tinymce/4/tinymce.min.js" referrerpolicy="origin"></script> {% endcomment %}
+{% load static %}
+<script type="text/javascript" src="{% static 'tinymce/js/tinymce/tinymce.min.js' %}"></script>  
+<script>
+  tinymce.init({
+		selector: '.tinymce',  // change this value according to your HTML
+    images_upload_url: '/uploadimg/', // Image upload address in Django route
+		
+		height: 456,
+    /*external_plugins: {
+        'eqneditor': 'plugins/eqneditor/plugin.min.js'
+    },*/
+    plugins : 
+    "fullscreen advlist autolink image lists charmap preview anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template help eqneditor",
+    toolbar: "undo redo | styleselect | bold italic | bullist numlist outdent indent | preview eqneditor link image",
+    paste_data_images: true,
+    menu: {
+      favs: {title: 'My Favorites', items: 'code visualaid searchreplace emoticons'}
+      },
+    menubar: 'favs file edit view insert format tools table help',
+	});
+</script>
+{% comment %} {% load static %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script> {% endcomment %}
+{% endblock content %}

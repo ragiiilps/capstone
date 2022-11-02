@@ -1,0 +1,12 @@
+1. Buatlah program untuk menghitung jumlah, rerata, dan standar deviasi nilai dari sejumlah mahasiswa dalam kelas mata kuliah pemrograman dasar, kemudian tampilkan!
+Petunjuk: Persamaan untuk menghitung varians adalah
+2. Perhatikan program di bawah ini.
+a. Apakah tujuan dari program tersebut?
+b. Kendali program apa yang diimplementasikan di dalam program tersebut?
+c. Jika x, y, dan z diisi dengan 3, 2, 10; apakah output dari program tersebut?
+d. Apakah terdapat syntax error dalam kode tersebut? Jika ada, tuliskan kesalahan tersebut dan tuliskan pula perbaikannya.
+e. Pesan yang berhubungan dengan syntax error akan diberikan oleh?
+f. Apakah terdapat logic error dalam kode tersebut? Jika ada, tuliskan kesalahan tersebut dan tuliskan pula perbaikannya.
+g. Apa akibat dari adanya logic error?
+3. Berikut ini adalah potongan kode untuk menyimpan data matriks dengan dimensi NxM dan membuat transpose matriks.
+Lengkapi kode tersebut sehingga dapat dieksekusi dan sekaligus menampilkan matriks dan transposenya dengan tampilan sebagai berikut.

@@ -1,0 +1,208 @@
+{% extends 'based.html' %}
+{% load static %}
+{% block title %}
+<span style="color:#976dd8;">Detail</span>
+{% endblock title %}
+{% block content %}
+
+<style>
+  .modal {
+    display: none; 
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; 
+  }
+  
+  .select-selected {
+    background-color: #0000;
+  }
+  
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid #0000 transparent ;  
+    border-color: #000 transparent transparent transparent;
+  }
+  
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  .select-items div,.select-selected {
+    color: #000;
+    padding: 3px 2px;
+    background-color: #fff;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .select-items {
+    position: absolute;
+    background-color: #000000 solid;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    margin: 0px 11px;
+  }
+  
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgb(165, 165, 165);
+  }
+  </style>
+
+<div style="display: flex; flex-direction: row;">
+	<h4 style="opacity: 0.5;text-align: center; padding: 18px 0; margin-top:10px;">Indikator</h4>
+	<div style="margin-left: 84px">
+		<h4 style=" padding: 16px 0; border-top: 2px solid #2f245c; margin-top:10px;">Detail Indikator</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" style="margin-bottom: 10px;">
+        <h3 style="padding: 0 16px 16px 10;">Detail Soal Ditugaskan</h3>
+    </div>
+    <div class="col-md-12">
+		<div class="card">
+			<div class="card-body">
+        {% for tugas in indikator_data %}
+              <h5><b>{{tugas.kurikulum}} / {{tugas.mata_kuliah}}</b></h5>
+              <h5><b>Topik:</b> {{tugas.topik}}</h5>
+              <h5><b>Student Outcome:</b> {{tugas.student_outcome}}</h5>
+              <h5><b>Learning Outcome:</b> {{tugas.learning_outcome}}</h5>
+        {%endfor%}
+            </div>
+        </div>
+        <button type="submit" id="btnGuru" class="btn btn-info btn-fill btn-primary pull-right">Tugaskan</button>
+    </div>
+    <div class="col-md-12" style="margin-bottom: 10px;">
+        <h3 style="padding: 0 16px 16px 10;">Daftar Soal</h3>
+    </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" style="background:#2f245c;font-size:12px;font-weight:700;color:white;padding-bottom:10px;padding-left: 30px;">
+        
+                </div>
+                {%if flag == 0 %}
+                <div class="card-body" style="margin-top: 10px;">
+                  <div class="row" style=" display: flex; justify-content: center; align-items: center;margin: 0 20px;">
+                    <h5>Belum ada soal yang disubmisi</h5> 
+                  </div>
+                </div>
+                {%else%}
+                {%for soal in soal_data%}
+                <div class="card-body" style="margin-top: 10px;">
+                    <div class="row">
+                        <div class="col-lg-9" style="align-items: center; padding:0 15px;">
+                            <h5>{{soal.judul}}</h5>
+                            <div style="font-size: 12px;margin-bottom:10px;">{{soal.creator}} - Status: {{soal.status}} - Tanggal submisi: {{soal.created_date}}</div>
+                        </div>
+                        <div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin: 0 20px;">
+                            <h5>Mapping</h5> 
+                        </div>
+                        <div class="col-lg-1" style=" display: flex; justify-content: center; align-items: center;margin-right:0px;margin-bottom: 10px;">
+                            <form method="POST" action="">
+                                {% csrf_token %}
+                                <input type="hidden" name="id_soal" value="{{ soal.id }}">
+                                <input type="hidden" name="type" value="review">
+                                <button type="submit" class="btn btn-info btn-fill pull-right btn-primary">View Soal</button>
+                            </form>
+                        </div>
+                    </div>
+              </div>
+              {%endfor%}
+              {%endif%}              
+          </div>
+          <div>
+            <button class="btn btn-info btn-fill pull-right btn-primary" onclick="window.history.back()">Kembali</button>   
+          </div>                    
+        </div>
+</div>
+<div id="modalGuru" class="modal">
+    <div class="modal-content">
+      <span class="close" >&times;</span>
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Riwayat Penugasan</h4>
+          {%for user in already_assign%}
+            <li>{{user}}</li>
+          {%endfor%}
+          <br>
+
+        <form method="POST">
+          <input type="hidden" name="type" value="assignUser">
+          {% csrf_token %}
+          {{form}}
+        <br>
+        <br>
+        <button type="submit" id="btnTolakReview" class="btn btn-info btn-fill btn-primary" style="margin-bottom: 10px;width:20%;">Tugaskan</button>
+        </form>
+        <br>
+  </div>
+
+  <script>
+        var modal = document.getElementById("modalGuru");
+        var btn = document.getElementById("btnGuru");
+        var span = document.getElementsByClassName("close")[0];
+        function goBack(){
+          window.history.back()
+        }
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+{% endblock content %}

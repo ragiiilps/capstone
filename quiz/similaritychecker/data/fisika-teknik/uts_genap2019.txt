@@ -1,0 +1,9 @@
+Sebuah bola kasti dengan massa 0,2 kg melaju dengan kecepatan 72 km/jam. Bola dipukul balik oleh pemain sehingga melayang balik ke arah pelempar bola dengan kecepatan 144 km/jam.
+Interaksi antara bola dengan pemukul adalah:
+gambarkan momentum barchart
+Tentukan gaya maksimum yang diberikan pemukul terhadap bola.
+Seorang anak memiliki massa 75 kg berlari dengan kecepatan konstan 14.4 km/jam lalu melompat ke atas sebuah trolley dengan massa 25 kg.
+Berapa kecepatan gerak trolley dan si anak?
+Seorang anak dengan tinggi 1.5 m, melemparkan kelereng seberat 20 gram tegak lurus ke atas dengan kecepatan 50 m/s. Gunakan pemahaman anda tentang konsep kekekalan energi untuk menghitung ketinggian maksimun yang bisa dicapai kelereng.
+Hitung juga kecepatan terminal kelereng, sesaat sebelum menyentuh tanah, setelah menyentuh ketinggian seperti yang anda hitung di atas.
+hitung, pada t=?, beban 2 kg mulai bergerak?

@@ -1,0 +1,3 @@
+Seseorang mengendarai mobil dengan kecepatan konstan 80 km/jam di jalan dengan batas kecepatan
+maksimal 60 km/jam. Ketika polisi mengetahui, dia bergegas mengejar dengan motor pada akselerasi
+konstan 5 m/s2. Hitung waktu yang diperlukan oleh polisi untuk mencapai mobil yang dikejar!

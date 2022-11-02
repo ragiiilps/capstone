@@ -1,0 +1,6 @@
+Kinematika 2D 3
+Sebuah bianglala (Ferris wheel) memiliki jari-jari 9.0 meter berputar 4.0 kali per menit.
+Hitung kecepatan yang dirasakan orang yang menaikinya.
+Hitung percepatan yang dirasakan orang yang menaikinya.
+Buat model secukupnya.
+Perhatikan satuannya.

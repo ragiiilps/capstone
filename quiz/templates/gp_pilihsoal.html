@@ -1,0 +1,57 @@
+{% extends 'based.html' %}
+{% load static %}
+{% block title %}
+
+<span style="color:#976dd8;">Indikator</span>
+{% endblock title %}
+{% block content %}
+
+<div style="display: flex; flex-direction: row;">
+<h4 style="opacity: 0.5;text-align: center; padding: 18px 0; margin-top:10px;">Detail Paket Soal</h4>
+<div style="margin-left: 84px">
+	<h4 style="opacity: 0.5;text-align: center; padding: 18px 0; margin-top:10px;">Pilih Indikator</h4>
+	</div>
+	<div style="margin-left: 84px">
+	<h4 style="opacity: 0.5;text-align: center; padding: 18px 0; margin-top:10px;">Pilih Parent Soal</h4>
+		</div>
+	<div style="margin-left: 84px">
+		<h4 style=" padding: 16px 0; border-top: 2px solid #2f245c; margin-top:10px;">Pilih Soal</h4>
+  </div>
+</div>
+
+{{error}}
+<form method="POST" action="">
+<div class="row">
+	{%for soal in soal_data%}
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;color:white;padding-bottom:10px;">
+				
+			</div>
+			<div class="card-body ">
+				<div class="row">
+
+					<div class="col-md-11">
+						<b>{{ soal.question|safe }}</b>
+			        <hr>
+					{% for j in soal.option %}
+					    {{ j|safe }}<br>
+		            {%  endfor %}
+					</div>
+					<div class="col-md-1" style="align-items: center; display: flex;">
+						<input type="checkbox" style="margin-right: 0px; transform: scale(2);" class="pull-right" name="selected" id="option{{soal.id}}" value={{soal.id}} />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{%endfor%}
+	
+
+		
+</div>
+{% csrf_token %}
+<button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Pilih</button>
+</form>
+
+{% endblock content %}

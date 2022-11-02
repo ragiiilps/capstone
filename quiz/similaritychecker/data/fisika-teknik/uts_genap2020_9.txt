@@ -1,0 +1,5 @@
+Dinamika 2
+Sebuah kargo seberat 100 kg berbentuk kubus dengan ukuran sisi 50 cm.
+Koefisien gesek statiknya 0.4 dan dinamiknya 0.2.
+Hitung percepatan maksimal mobil yang membuat kotak tersebut tidak bergerak. 
+Buat model secukupnya. Jangan hanya hitungan.

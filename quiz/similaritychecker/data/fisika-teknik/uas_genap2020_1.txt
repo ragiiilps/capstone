@@ -1,0 +1,11 @@
+Hanging Flower Pot
+Consider a hanging flower pot shown in the figure above. For simplicity, let us assume that the flower pot is supported by 3 different strings (T1, T2 and T3) with length L given by L=(4B1×10) cm
+The flower pot can be modeled as a half-sphere with total weight W and radius R given by R=(B22×10)cm
+a) Determine the value of η, which is defined as
+𝜂=1−(𝑅𝐿)2
+b) Suppose that the flower pot’s weight is given by
+𝑊=(40×√B12−(B28)2)N
+Determine the tension of all strings!
+It is known that the maximum tension that can be allowed by the strings is Tmax=(B3×50)𝑁
+before the strings break.
+c) Determine the value of Wmax, the maximum flower pot’s weight that still can be supported by the strings!

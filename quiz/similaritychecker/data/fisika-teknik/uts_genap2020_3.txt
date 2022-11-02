@@ -1,0 +1,3 @@
+Kinematika 3
+Sebuah bola menggelinding dengan kecepatan 36 km/jam. Lalu, mendapat percepatan sebagai berikut:
+Berapa kecepatannya pada detik ke-8?

@@ -1,0 +1,3 @@
+Dinamika 1
+Sebuah mobil ditarik dengan kecepatan konstan pada bidang miring dengan sudut 20o. Mobil tersebut memiliki berat 15000 N. Berapa gaya yang diterima oleh tali?
+ [clue: Ingat equilibrium]

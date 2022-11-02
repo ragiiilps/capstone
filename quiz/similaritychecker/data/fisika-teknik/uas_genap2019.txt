@@ -1,0 +1,14 @@
+1. Sebuah toko ingin memasang sebuah papan iklan (seperti ditunjukkan pada gambar di atas) di depan tokonya. Papan iklan bermassa M ditopang oleh sebuah tongkat ringan dengan massa m dan panjang L, dan sebuah kabel. Diketahui bahwa tegangan pada kabel tersebut tidak boleh melebihi tegangan kritis Tcrit agar kabel tersebut tidak putus.
+a. Buktikan bahwa θ > θcrit agar kabel tersebut tidak putus! Berapakah nilai dari θcrit tersebut?
+b. Berapakah besar gaya tekan yang dirasakan oleh engsel saat θ = θcrit ?
+2. Diketahui bahwa pada sebuah sistem pegas-massa, massa m mempunyai kecepatan yo dan berada pada posisi xo ketika t = 0. Diketahui bahwa posisi x sebagai fungsi waktu t untuk sistem ini dapat dinyatakan sebagai berikut : 
+x(t)=A sin(ω_o t+ϕ_o )
+a. Berapakah nilai dari A dan ϕo tersebut? (Nyatakan jawaban anda dalam variabel xo, vo dan ωo.)
+b. Jika diketahui bahwa vo > 0 dan xo < 0, gambarkanlah grafik v(t) sebagai fungsi dari x(t) untuk time interval 0 < t < T ! Pada grafik tersebut, berilah keterangan posisi saat t = 0, \T/4, 2T/4, 3T/4 dan T!
+3. Sebuah senar gitar yang mempunyai tegangan To menghasilkan Standing Wave dengan frekuensi fo. Jika tegangan senar tersebut berubah sebesar ΔT (<< To), maka frekuensi Standing Wave yang dihasilkan akan berubah sebesar Δf (<< fo). Buktikanlah bahwa : 
+4. Sebuah balok metal dengan massa MA dan suhu TA ditempelkan ke balok metal lainnya yang bermassa MB dan suhu TB. Jika diketahui bahwa specific heat dari kedua metal tersebut adalah cA dan cB, maka berapakah suhu akhir dari kedua balok metal tersebut? 
+5. Di dalam sebuah kontainer tertutup, terdapat gas sebanyak $n$ mol. Berapakah usaha yang dilakukan oleh gaya luar pada gas untuk proses-proses berikut ini?
+a. Gas berada dalam proses isochoric.
+b. Volume gas diubah dari Vi menjadi Vf dalam proses isobaric dengan tekanan konstan po.
+c. Volume gas diubah dari Vi menjadi Vf dalam proses isothermal dengan suhu konstan To.
+d. Suhu gas diubah sebesar ΔT dalam proses adiabatic (pVγ = constant).

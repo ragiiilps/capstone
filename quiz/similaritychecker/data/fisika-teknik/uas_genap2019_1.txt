@@ -1,0 +1,3 @@
+1. Sebuah toko ingin memasang sebuah papan iklan (seperti ditunjukkan pada gambar di atas) di depan tokonya. Papan iklan bermassa M ditopang oleh sebuah tongkat ringan dengan massa m dan panjang L, dan sebuah kabel. Diketahui bahwa tegangan pada kabel tersebut tidak boleh melebihi tegangan kritis Tcrit agar kabel tersebut tidak putus.
+a. Buktikan bahwa θ > θcrit agar kabel tersebut tidak putus! Berapakah nilai dari θcrit tersebut?
+b. Berapakah besar gaya tekan yang dirasakan oleh engsel saat θ = θcrit ?

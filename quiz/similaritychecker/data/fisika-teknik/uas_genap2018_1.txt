@@ -1,0 +1,4 @@
+Sebuah dawai gitar dibentangkan sepanjang sumbu-x pada saat posisi equilrium. Ujung tetap (fix) dawai pada x = 0. Sebuah gelombang sinus dengan amplitude A = 0.750 mm dan frekuensi f = 440 Hz bergerak pada dawai dengan arah -x dengan kecepatan 143 m/s. Gelombang ini dipantulkan dari ujung tetap dan kedua gelombang datang dan pantul membentuk sebuah gelombang tegak.
+a. Tentukan persamaan yang memberikan displacement sebuah titik sebagai fungsi posisi dan waktu.
+b. Tentukan lokasi-lokasi node.
+c. Tentukan amplitude gelombang tegak, percepatan dan kecepatan maksimum transverse.

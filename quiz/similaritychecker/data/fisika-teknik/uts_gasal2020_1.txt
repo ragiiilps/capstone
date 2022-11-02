@@ -1,0 +1,2 @@
+Buatlah program untuk menghitung jumlah, rerata, dan standar deviasi nilai dari sejumlah mahasiswa dalam kelas mata kuliah pemrograman dasar, kemudian tampilkan!
+Petunjuk: Persamaan untuk menghitung varians adalah

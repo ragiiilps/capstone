@@ -1,0 +1,4 @@
+Sebuah rover bergerak di bidang xy dengan variasi terhadap waktu sebagai berikut.
+x = 2 m - (0,25 m/s2)t2
+y = (1 m/s)t + (0,025m/s3)t3
+Hitung koordinat rover dan jaraknya terhadap titik awal setelah 2 s!

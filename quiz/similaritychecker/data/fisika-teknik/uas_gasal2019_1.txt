@@ -1,0 +1,17 @@
+Sebuah mobil yang memiliki keofisien gesek roda dan jalan 0,02, massa 1.050 kg bergerak dengan
+kecepatan konstan 70 km/jam pada jalan mendatar. Mesin menggunakan motor bakar dengan rasio
+kompresi 10,5:1, bahan bakar yang memiliki kalor pembakaran 40.500 J/g dan massa jenis 0,73 g/cc.
+Suhu dan tekanan udara inisial adalah 270C dan 101 kPa. Mesin tersebut menghasilkan daya maksimal
+11,2 kW pada 6.000 rpm dan torsi maksimal 27 Nm pada 4.000 rpm. Roda yang digunakan memiliki
+diameter 60 cm. Diasumsikan udaranya merupakan gas ideal dengan gamma 1,4, percepatan gravitasi
+10 m/s2, koefisien gesek udara, rugi-rugi transmisi, dan konstanta redaman mekanis diabaikan.
+a. Hitung daya dan torsi yang dikeluarkan pada kecepatan tersebut!
+b. Jika pada kecepatan tersebut dibuat agar rpm mesin menghasilkan output torsi maksimal, hitung
+reduksi gigi total yang diperlukan!
+c. Hitung efisiensi termal mesin!
+d. Hitung tekanan dan temperatur dalam silinder saat akhir langkah kompresi adiabatis!
+e. Hitung konsumsi bahan bakar dalam km/liter jika efisiensi selain termal, dll diabaikan!
+2. Suatu suara 1 kHz merambat di udara pada temperatur 30 0C. Diasumsikan udara memiliki massa molar
+28,8x10-3 kg/mol dan rasio kapasitas panas 1,4.
+a. Hitung kecepatan suaranya!
+b. Hitung panjang gelombangnya!

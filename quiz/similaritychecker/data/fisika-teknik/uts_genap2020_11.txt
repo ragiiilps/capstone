@@ -1,0 +1,5 @@
+Kinetik 2
+Dua buah vector    dan  
+Nyatakan dalam bentuk polar
+Gambarkan pada sumbu kartesian
+Hitung dot product  

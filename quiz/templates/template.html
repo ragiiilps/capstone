@@ -1,0 +1,71 @@
+{% extends 'based.html' %}
+{% block title %}
+<span style="color:#976dd8;">Data Soal</span>
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md-2">
+		<div style="display: flex; flex-direction: row;">
+			<h4 style="text-align: center;border-top: 2px solid #2f245c; padding: 16px 0; margin-top:10px;">Template Soal</h4>
+		</div>
+	</div>
+	<div class="col-md-10 mt-4">		
+		<a class="nav-link btn btn-info btn-fill pull-left btn-primary" href="{% url 'buattemplate' %}">
+			Buat Template
+		</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		{% for soal in datasoal %}
+
+		<div class="card">
+			<div class="card-header"
+				style="background:#2f245c;font-size:12px;font-weight:700;color:white;padding-bottom:10px;padding-left: 30px;">
+				{{soal.judul}}
+			</div>
+			<div class="card-body" style="margin-top: 10px;">
+				<div class="row">
+					<div class="col-lg-7" style=" display: flex; align-items: center; margin:0 15px;">
+						<h5>{{ soal.soal|safe }}</h5>
+					</div>
+					<div class="col-lg-1"
+						style=" display: flex; justify-content: center; align-items: center;margin: 0 20px;">
+						<h5>{{ soal.pengacakan }}</h5>
+					</div>
+					<div class="col-lg-1"
+						style=" display: flex; justify-content: center; align-items: center; margin-left:14px;margin-bottom: 10px;">
+						<form action="" method="POST">
+							{% csrf_token %}
+
+							<input type="hidden" name="id" value="{{ soal.id }}">
+							<input type="hidden" name="type" value="lihat">
+							<button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Lihat</button>
+						</form>
+					</div>
+					<div class="col-lg-1"
+						style=" display: flex; justify-content: center; align-items: center;margin-left:14px;margin-bottom: 10px;">
+						<form method="POST" action="">
+							{% csrf_token %}
+
+							<input type="hidden" name="id" value="{{ soal.id }}">
+							<input type="hidden" name="type" value="gunakan">
+							<button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Gunakan</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,7 @@
+Kinetik 4
+Sebuah roket memiliki massa 150 ton. Meluncur lurus ke atas dengan dorongan sebesar 4.0 x 106 N.
+Buat model partikelnya.
+Dengan mengabaikan gesekan udara, hitung:
+Usaha yang telah dilakukan oleh gaya dorong.
+Usaya yang telah dilakukan oleh gaya gravitasi.
+Kecepatan roket setelah meluncur sejauh pada 1 km

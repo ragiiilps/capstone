@@ -1,0 +1,110 @@
+{% extends 'based.html' %}
+{% load static %}
+{% block title %}
+
+<span style="color:#976dd8;">Indikator</span>
+{% endblock title %}
+{% block content %}
+
+<style>
+    #custom-input {
+        display: inline-block;
+        max-width: 100%;
+        height: calc(2.25rem + 2px);
+        padding: .375rem 1.75rem .375rem .75rem;
+        line-height: 1.25;
+        color: #495057;
+        vertical-align: middle;
+        background-size: 8px 10px;
+        border: 1px solid rgba(0, 0, 0, .15);
+        border-radius: .25rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .custom-select {
+        position: relative;
+        font-family: Arial;
+    }
+
+    .custom-select select {
+        display: none;
+    }
+
+    .select-selected {
+        background-color: #0000;
+    }
+
+    .select-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid #0000 transparent;
+        border-color: #000 transparent transparent transparent;
+    }
+
+    .select-selected.select-arrow-active:after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+    }
+
+    .select-items div,
+    .select-selected {
+        color: #000;
+        padding: 3px 2px;
+        background-color: #fff;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    /*style items (options):*/
+    .select-items {
+        position: absolute;
+        background-color: #000000 solid;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        margin: 0px 11px;
+    }
+
+    .select-hide {
+        display: none;
+    }
+
+    .select-items div:hover,
+    .same-as-selected {
+        background-color: rgb(165, 165, 165);
+    }
+</style>
+</head>
+<div style="display: flex; flex-direction: row;">
+    <h4 style="padding: 16px 0; border-top: 2px solid #2f245c; margin-top:10px;">Reviewer</h4>
+</div>
+{% include 'popup-message.html' %}
+<div class="row">
+    <div class="col-md-12" style="margin-bottom: 10px;">
+        <h3 style="padding: 0 19px 20px 0;">Tunjuk reviewer untuk paket soal {{ soal.judul }}</h3>
+        <h4 style="padding: 0 19px 20px 0;">Penulis Soal: {{ creator.first_name }} {{ creator.last_name }}</h4>
+    </div>
+    <div class="col-md-12">
+        <form method="post" action="">
+            {% csrf_token %}
+            <h5>Nama Reviewer</h5>
+            <select name="nama_peninjau" style="margin: top 15px; width: 400px;">
+                <option value="0" selected>Pilih reviewer</option>
+                {% for user in users %}
+                <option value="{{user.id}}">{{user.first_name}} {{user.last_name}}</option>
+                {%endfor%}
+            </select><br><br>
+            <button type="submit" class="btn btn-info btn-fill btn-primary">Submit</button>
+            <button type="submit" name="kembali" class="btn btn-info btn-fill pull-right btn-primary">Kembali</button>
+            <br>
+        </form>
+    </div>
+
+    {% endblock content %}

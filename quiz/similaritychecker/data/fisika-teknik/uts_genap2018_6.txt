@@ -1,0 +1,3 @@
+Seorang siswa menarik seutas tali yang terikat erat pada dinding dengan gaya 100 N. Di tempat yang lain, dua orang siswa saring tarik, dengan arah yang berlawanan, seutas tali. Masing-masing siswa menarik dengan gaya 100 N. 
+a. gambarkan free-body diagram pada kedua kasus tersebut.
+b. tentukan gaya yang diterima tali pada kedua kasus tersebut dan bandingkan, mana yang lebih besar?

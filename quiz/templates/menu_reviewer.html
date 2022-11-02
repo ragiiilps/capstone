@@ -1,0 +1,21 @@
+{% load static %}
+<li class="nav-item {{dashboard}}">
+    <a class="nav-link" href="{% url 'dashboard' %}">
+        <p style="margin:0 0 0 20px;">Dashboard</p>
+    </a>
+</li>
+<li class="nav-item {{panduan}}">
+    <a class="nav-link" href="{% url 'panduan' %}">
+        <p style="margin:0 0 0 20px;">Panduan</p>
+    </a>
+</li>
+<li class="nav-item {{indikator}}">
+    <a class="nav-link" href="{% url 'indikator' %}">
+        <p style="margin:0 0 0 20px;">Indikator</p>
+    </a>
+</li>
+<li class="nav-item {{datapaket}}">
+    <a class="nav-link" href="{% url 'datapaket' %}">
+        <p style="margin:0 0 0 20px;">Paket Soal</p>
+    </a>
+</li>

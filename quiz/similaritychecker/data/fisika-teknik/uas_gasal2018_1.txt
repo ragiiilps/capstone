@@ -1,0 +1,8 @@
+Sebuah mobil dengan motor bakar diesel memerlukan energi rerata 1.000 J per siklus untuk
+bergerak dengan kecepatan rerata 50 km/jam. Mesin tersebut menggunakan rasio kompresi
+10:1 dengan bahan bakar yang memiliki kalor pembakaran 50.000 J/g. Suhu dan tekanan udara
+inisial adalah 270C dan 101 kPa. Diasmusikan udaranya merupakan gas ideal dengan gamma
+1,4.
+a. Hitung efisiensi termal mesin!
+b. Hitung tekanan dan temperatur dalam silinder setelah kompresi (tunjukkan grafik
+siklusnya)!

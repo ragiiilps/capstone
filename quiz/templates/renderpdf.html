@@ -1,0 +1,170 @@
+{% load static %} {% load extras %} {% block title %} {% endblock title %}
+<div class="container">
+  {% block content %}
+  <style>
+    .container {
+      margin: auto;
+      width: 90%;
+    }
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: black;
+      text-align: center;
+    }
+    /* Header/Logo Title */
+    .header {
+      margin:0;
+      text-align: center;
+      color: black;
+      font-size: 30px;
+    }
+    .ugm {
+      margin:0;
+    }
+    .ft {
+      margin:0;
+      font-weight: normal;
+      font-size: 15px;
+    }
+    .dept {
+      margin: 0;
+      font-weight: normal;
+      font-size: 15px;
+    }
+    .hr-atas {
+      margin:0 0 10px 0;
+      background: black;
+      border: 2px solid black;
+    }
+    .prodi,
+    .ta,
+    .matkul,
+    .dosen,
+    .sifat {
+      margin:0;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .instruksi {
+      margin: 100px 0 0 0;
+      text-align: left;
+    }
+    .lo {
+      margin: 50px 0 0 0;
+      text-align: left;
+    }
+    .pet,
+    .out {
+      margin: 5px 0 0 0;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    li {
+      font-size: 15px;
+    }
+    ol {
+      margin-top: 10px;
+    }
+    .hr-tengah,
+    .hr-bawah {
+      margin:0 0 10px 0;
+      background: black;
+      border: 0.3px solid black;
+    }
+    .jalan,
+    .kontak,
+    .email {
+      margin: 0;
+      font-size: 16px;
+    }
+  </style>
+  <div class="container">
+    <div class="header">
+        <h4 class="ugm">Universitas Gadjah Mada</h4>
+        <h6 class="ft ">FAKULTAS TEKNIK</h6>
+        <p class="dept">Departemen Teknik Elektro dan Teknologi Informasi</p>
+        <hr class="hr-atas" />
+        <div>
+          <p class="prodi">
+            Program Studi Sarjana Teknik Elektro, Teknologi Informasi, Teknik
+            Biomedis
+          </p>
+          <p class="ta">UAS Ganjil 2022/2023</p>
+          <p class="matkul">Fisika Mekanika Klasik(TKU112121) / 3 SKS</p>
+          <p class="dosen">Eka Firmansyah</p>
+          <p class="sifat">Sifat: <em>Closed-book</em></p>
+        </div>
+        <div class="instruksi">
+          <p class="pet">Instruksi pengerjaan dan pengumpulan:</p>
+          <ol>
+            <li>
+              Kerjakan soal-soal berikut ini dengan menuliskan jawaban anda pada
+              <b>kertas ukuran A4/folio</b>. Tuliskan dengan <b>rapi</b> dan
+              menggunakan <b>tinta hitam/biru</b> supaya jelas.
+            </li>
+            <li>Jawablah dengan <b>urut</b>, sesuai nomer soal.</li>
+            <li>
+              Foto/scan jawaban anda kemudian submit ke <b>eLOK</b> dengan format
+              <b>pdf</b> pada waktu yang sudah ditentukan
+              <b>(10.00-11.40 WIB)</b>.
+            </li>
+          </ol>
+        </div>
+        <div class="lo">
+          <p class="out">Learning outcomes:</p>
+          <ol>
+            <li>
+              TKIE161103-LO3 Students are able to utilize various data types and
+              basic data structures to develop the program.
+            </li>
+            <li>
+              TKIE161103-LO4 Students are able to implement modular programming
+              and choose various programming strategies to get a good, effective
+              and efficient program.
+            </li>
+          </ol>
+        </div>
+    </div>
+      
+      <hr class="hr-tengah" />
+      <div class="soal">
+        <div class="row">
+          <ol>
+            <li>
+              {% for soal, t in pertanyaan|zip:jawaban %}
+              <div class="col-md-12">
+                <div class="card">
+                  <div
+                    class="card-header"
+                    style="background: #2f245c; color: white; padding-bottom: 10px"
+                  ></div>
+                  <div class="card-body">
+                    <p>{{ soal|safe }}</p>
+                  </div>
+                  <div class="container-fluid mb-3">
+                    {% for j in t %} {{ j|safe }}<br />
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <hr class="hr-bawah" />
+    <div class="footer">
+      <p class="jalan">Jl. Grafika No. 2 Kampus UGM, Yogyakarta 55281</p>
+      <p class="kontak">
+        Telp : (0274) 552305, 631172, 631173, 631174, 6492201, 6492202 Fax.
+        (0274) 552305
+      </p>
+      <p class="email">http://te.ugm.ac.id, E-mail:tute@te.ugm.ac.id</p>
+    </div>
+  </div>
+  {% endblock content %}
+</div>

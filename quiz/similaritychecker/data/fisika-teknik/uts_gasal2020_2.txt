@@ -1,0 +1,8 @@
+Perhatikan program di bawah ini.
+a. Apakah tujuan dari program tersebut?
+b. Kendali program apa yang diimplementasikan di dalam program tersebut?
+c. Jika x, y, dan z diisi dengan 3, 2, 10; apakah output dari program tersebut?
+d. Apakah terdapat syntax error dalam kode tersebut? Jika ada, tuliskan kesalahan tersebut dan tuliskan pula perbaikannya.
+e. Pesan yang berhubungan dengan syntax error akan diberikan oleh?
+f. Apakah terdapat logic error dalam kode tersebut? Jika ada, tuliskan kesalahan tersebut dan tuliskan pula perbaikannya.
+g. Apa akibat dari adanya logic error?

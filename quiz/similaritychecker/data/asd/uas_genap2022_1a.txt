@@ -1,0 +1,2 @@
+Struktur data pohon dapat digunakan untuk membentuk expression tree seperti pada gabar berikut ini.
+a. Tuliskan algoritma (dalam flowchart) untuk menelusuri pohon tersebut secara postorder.

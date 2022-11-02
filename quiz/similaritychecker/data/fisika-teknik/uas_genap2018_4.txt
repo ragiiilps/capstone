@@ -1,0 +1,6 @@
+Sebuah mesin berbahan bakar bensin mengambil 10.000 J kalor dan menghasilkan 2000 J kerja mekanis pada setiap siklusnya. Kalor diperoleh dari pembakaran bensin pada ruang bakar L_c=5,0×10^4  J\/g. 
+a. Berapa efisiensi termal mesin tersebut?
+b. Berapa banyak kalor yang dibuang oleh mesin tersebut?
+c. Jika mesin melakukan 25 langkah setiap detiknya, berapa daya keluaran dalam watt dan tenaga kuda?
+d. Berapa banyak bensin yang dibakar dalam setiap siklusnya? 
+e. Berapa banyak bensin yang dibakar setiap detik dan setiap jam?

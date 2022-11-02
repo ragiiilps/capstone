@@ -1,0 +1,49 @@
+                    {% load static %}
+
+<li class="nav-item {{dashboard}}">
+    <a class="nav-link" href="{% url 'dashboard' %}">
+        <p style="margin:0 0 0 20px;">Dashboard</p>
+    </a>
+</li>
+<!-- <li class="nav-item {{panduan}}">
+    <a class="nav-link" href="{% url 'panduan' %}">
+        <p style="margin:0 0 0 20px;">Panduan</p>
+    </a>
+</li> -->
+<li class="nav-item {{template}}">
+    <a class="nav-link" href="{% url 'template' %}">
+        <p style="margin:0 0 0 20px;">Template Soal</p>
+    </a>
+</li>
+<li class="nav-item {{buatindikator}}">
+    <a class="nav-link" href="{% url 'buatindikator' %}">
+        <p style="margin:0 0 0 20px;">Buat Soal</p>
+    </a>
+</li>
+<!-- <li class="nav-item {{pilihindikator}}">
+    <a class="nav-link" href="{% url 'pilihindikator' %}">
+        <p style="margin:0 0 0 20px;">Soal</p>
+    </a>
+</li> -->
+<li class="nav-item {{pilihindikatorview}}">
+    <a class="nav-link" href="{% url 'pilihindikatorview' %}">
+        <p style="margin:0 0 0 20px;">Soalku</p>
+    </a>
+</li>
+<li class="nav-item {{datapaket}}">
+    <a class="nav-link" href="{% url 'datapaket' %}">
+        <p style="margin:0 0 0 20px;">Paket Soal</p>
+    </a>
+</li>
+<li class="nav-item {{peerreview}}">
+    <a class="nav-link" href="{% url 'peer-review' %}">
+        <p style="margin:0 0 0 20px;">Peer-Review</p>
+    </a>
+</li>
+<li class="nav-item {{soalpeninjau}}">
+    <a class="nav-link" href="{% url 'soalpeninjau' %}">
+        <p style="margin:0 0 0 20px;">Soal-Review</p>
+    </a>
+</li>
+
+

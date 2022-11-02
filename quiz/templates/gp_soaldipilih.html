@@ -1,0 +1,56 @@
+<script>
+
+</script>
+
+{% extends 'based.html' %}
+{% load static %}
+{% load extras %}
+{% block title %}
+
+<span style="color:#976dd8;">Generate</span>
+{% endblock title %}
+
+<div>
+
+
+{% block content %}
+<div style="display: flex; flex-direction: row;">
+	<h4 style="opacity: 0.5;text-align: center; padding: 18px 0; margin-top:10px;">Detail Paket Soal</h4>
+	<div style="margin-left: 84px">
+		  <h4 style=" padding: 16px 0; border-top: 2px solid #2f245c; margin-top:10px;">Soal Dipilih</h4>
+	</div></div>
+<div class="row">
+{% for soal in soal_data  %}
+    <div class="col-md-12">
+		<div class="card">
+			<div class="card-header" style="background:#2f245c;color:white;padding-bottom:10px;">
+				
+			</div>
+			<div class="card-body ">
+			        <b>{{ soal.question|safe }}</b>
+			        <hr>
+					{% for j in soal.option %}
+					    {{ j|safe }}<br>
+		            {%  endfor %}
+			</div>
+		</div>
+	</div>
+{%  endfor %}
+</div>  
+{% endblock content %}
+</div>
+
+<div>
+  {% block aig %}
+
+    {{ KmsVarVal }} <br>
+    {{ keynya }} <br>
+    {{ hsl }} <br>
+    {{ KmsVarBaru }} <br>
+    {{ VarnVal }} <br>
+    {{ VarBaru }} <br>
+    {{ jawaban }}
+
+
+  {% endblock aig %}
+</div>

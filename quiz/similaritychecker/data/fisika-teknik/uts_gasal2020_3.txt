@@ -1,0 +1,2 @@
+Berikut ini adalah potongan kode untuk menyimpan data matriks dengan dimensi NxM dan membuat transpose matriks.
+Lengkapi kode tersebut sehingga dapat dieksekusi dan sekaligus menampilkan matriks dan transposenya dengan tampilan sebagai berikut.

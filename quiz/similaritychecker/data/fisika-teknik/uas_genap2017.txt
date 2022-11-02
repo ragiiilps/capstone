@@ -1,0 +1,11 @@
+1. Sistem yang digambarkan di samping berada dalam keadaaan kesetimbangan; pegas bagian
+kanan teregang sejauh x1. Koefisien gesekan antara kedua balok μ, dan tidak ada gesekan
+ntara balok bawah dengan lantai. Konstanta pegas asingmasing 3k dan k. Massa kedua balok
+masing-masing m. Tentukan simpangan maksimum (amplitudo) osilasi sistem dimana balok
+atas masih diam relatif terhadap balok bawah. Massa pegas boleh diabaikan.
+2. Gelombang berjalan mempunyai persmaan y = 0,2 sin (100π t – 2π x), dimana y dan x dalam meter dan t dalam sekon. Tentukan amplitudo, periode, frekuensi, panjang gelombang, dan cepat rambat gelombang tersebut !
+3. Suatu sistem terdiri dari dua kubus identik, masing-masing bermassa m. Kedua kubus ini
+dihubungkan oleh seutas tali dan suatu pegas tak bermassa yang terkompres/tertekan, yang
+mempunyai konstanta pegas k. Pada suatu ketika tali penghubung kubus dibakar, hitung
+berapa besar pegas mula-mula harus tertekan agar kubus yang bawah akan terangkat. Hitung
+kenaikan pusat massanya, jika pegas mula-mula tertekan sebesar Δl = 7 mg/k!

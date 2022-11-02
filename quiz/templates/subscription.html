@@ -1,0 +1,163 @@
+{% extends 'based.html' %}
+{% load static %}
+{% block title %}
+
+<span style="color:#976dd8;">Indikator</span>
+{% endblock title %}
+{% block content %}
+
+<style>
+    #custom-input {
+        display: inline-block;
+        max-width: 100%;
+        height: calc(2.25rem + 2px);
+        padding: .375rem 1.75rem .375rem .75rem;
+        line-height: 1.25;
+        color: #495057;
+        vertical-align: middle;
+        background-size: 8px 10px;
+        border: 1px solid rgba(0, 0, 0, .15);
+        border-radius: .25rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .custom-select {
+        position: relative;
+        font-family: Arial;
+    }
+
+    .custom-select select {
+        display: none;
+    }
+
+    .select-selected {
+        background-color: #0000;
+    }
+
+    .select-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid #0000 transparent;
+        border-color: #000 transparent transparent transparent;
+    }
+
+    .select-selected.select-arrow-active:after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+    }
+
+    .select-items div,
+    .select-selected {
+        color: #000;
+        padding: 3px 2px;
+        background-color: #fff;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    /*style items (options):*/
+    .select-items {
+        position: absolute;
+        background-color: #000000 solid;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        margin: 0px 11px;
+    }
+
+    .select-hide {
+        display: none;
+    }
+
+    .select-items div:hover,
+    .same-as-selected {
+        background-color: rgb(165, 165, 165);
+    }
+</style>
+</head>
+<div style="display: flex; flex-direction: row;">
+    <h4 style="padding: 16px 0; border-top: 2px solid #2f245c; margin-top:10px;">Subskripsi E-mail</h4>
+</div>
+{% include 'popup-message.html' %}
+<div class="row">
+    <div class="col-md-12" style="margin-bottom: 10px;">
+        <h3 style="padding: 0 19px 20px 0;">Ubah pengaturan langganan e-mail untuk {{ email }}</h3>
+    </div>
+    <div class="col-md-12">
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="radio-toolbar">
+                {% if subskripsi %}
+                <input type="radio" id="radioyes" name="subskripsi" value="True" checked>
+                <label for="radioyes">Berlangganan</label>
+                <input type="radio" id="radiono" name="subskripsi" value="False">
+                <label for="radiono">Berhenti</label>
+                {% else %}
+                <input type="radio" id="radioyes" name="subskripsi" value="True">
+                <label for="radioyes">Berlangganan</label>
+                <input type="radio" id="radiono" name="subskripsi" value="False" checked>
+                <label for="radiono">Berhenti</label>
+                {% endif %}
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-info btn-fill btn-primary">Submit</button>
+            <br>
+            <br>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#id_mata_kuliah").change(function () {
+            const url = $("#indikatorForm").attr("data-so-url");
+            const MK_id = $(this).val();
+            $.ajax({
+                url: url,
+                data: {
+                    'matkul_id': MK_id
+                },
+                success: function (data) {
+                    console.log(data)
+                    $("#id_student_outcome").html(data);
+                }
+            });
+        })
+        $("#id_student_outcome").change(function () {
+            const url = $("#indikatorForm").attr("data-lo-url");
+            const SO_id = $(this).val();
+            $.ajax({
+                url: url,
+                data: {
+                    'studentOutcome_id': SO_id
+                },
+                success: function (data) {
+                    console.log(data)
+                    $("#id_learning_outcome").html(data);
+                }
+            });
+        })
+        $("#id_mata_kuliah").change(function () {
+            const url = $("#indikatorForm").attr("data-tp-url");
+            const MK_id = $(this).val();
+            $.ajax({
+                url: url,
+                data: {
+                    'matkul_id': MK_id
+                },
+                success: function (data) {
+                    console.log(data)
+                    $("#id_topik").html(data);
+                }
+            });
+        })
+    </script>
+
+    {% endblock content %}

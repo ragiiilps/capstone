@@ -1,0 +1,2 @@
+Struktur data graph memiliki banyak kegunaan. Misalnya dapat digunakan untuk merepresentasikan data penerbangan sebagai berikut. Dalam graph berikut ini, vertex mewakili kota, dan edge mewakili penerbangan antara kota-kota tersebut. Bobot dari edge mewakili biaya penerbangan.
+d. Terdapat banyak algoritme untuk menyelesaikan permasalahan pencarian jalur terpendek (shortest path problem). Salah satunya adalah Dijkstra’s algorithm. Tuliskan proses pencarian rute terpendek dengan algoritme Dijkstra’s pada graph di atas dengan s= A.

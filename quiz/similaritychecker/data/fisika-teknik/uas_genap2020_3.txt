@@ -1,0 +1,27 @@
+Measuring Acceleration of Gravity
+It is known that the oscillation period of a spring-mass system put on a horizontal table is given by 𝑇=2𝜋√𝑚𝑘
+However, when the system is in vertical position, it can be proved that the oscillation period will be the same as the one in a horizontal position.
+Based on this knowledge, Im Na-Yeon (임나연) performs an experiment to determine the acceleration of gravity inside her apartment. She only has a rubber band, 3 coins (500 Korean Won each), a cello tape, a ruler, and stopwatch from her smartphone. She then uses the cello tape to attach the coins to rubber band, and starts performing her experiment.
+Experimental Data
+Initially, the rubber band has length 𝐿𝑜=10 𝑐𝑚. She then puts the rubber band and coin system in a vertical position, and then measures the rubber band’s length L. Finally, she gives a small displacement to the coins, so that the system is oscillating up and down, and then she measures the oscillation period T. She then performs this experiment for different number of coins N, and the experimental data is shown in the table below. N L (cm) T (s)
+1
+17.3
+0.551
+2
+24.6
+0.780
+3
+31.9
+0.955
+a) Based on this experimental data, please help Noona Na-Yeon to determine the acceleration of gravity g inside her apartment!
+She then performs one final experiment by folding the rubber band in half, and then once again attach all coins to the rubber band.
+b) Determine the rubber band’s length (Lf) in this position!
+c) Determine also its oscillation period when it is given a small displacement!
+Mathematical Proof (Bonus Question)
+d) Show that the equation of motion of the rubber band-coin system in vertical position can be written as
+𝑑2𝐿𝑑𝑡2+𝑐1𝐿=0
+where L, the rubber band’s length, is defined as 𝐿=Δ𝐿+𝑐2
+Variables c1 and c2 in these equations are arbitrary constants, where ΔL is defined as the coins’ displacement from the equilibrium position.
+e) Determine the the value of c1 and c2!
+f) Prove that the oscillation period T of a spring-mass system in vertical position is given by
+𝑇=2𝜋√𝑚𝑘
